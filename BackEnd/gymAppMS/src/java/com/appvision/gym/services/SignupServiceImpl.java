@@ -23,8 +23,8 @@ public class SignupServiceImpl implements SignupService{
 	
 	
 	@Override
-	public  boolean userSignUp(User user,Connection connection) {
-		return securityDao.userSignUp(user, connection);
+	public  boolean userSignUp(User user) {
+		return securityDao.userSignUp(user);
 	}
 
     @Override

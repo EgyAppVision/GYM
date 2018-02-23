@@ -5,7 +5,7 @@ import java.sql.Connection;
 
 public interface UserDao {
 	
-	public boolean userSignUp (User user,Connection connection);
+	public boolean userSignUp (User user);
 
 
 }

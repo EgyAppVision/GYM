@@ -1,8 +1,9 @@
 package com.appvision.gym.model;
 
 import java.io.Serializable;
-import javax.validation.constraints.NotNull;
-
+import java.util.Date;
+//import javax.validation.constraints.NotNull;
+import org.hibernate.validator.NotNull;
 public class User implements Serializable{
 /**
 	 * 
@@ -11,18 +12,22 @@ private static final long serialVersionUID = 1448793414629205821L;
 private int userId;
 @NotNull (message = "null value")
 private String firstName;
-@NotNull
+@NotNull (message = "null value")
+private String userName;
+private  String password;
 private String lastName;
-private String gender;
+private int gender;
+private  String mobile;
 private String email;
 private int activity;  
 private String place ;
-
-private int age;
-
+private Date birthDate;
 private int weight;
 private  int height;
 private int fatPercentage;
+private int preferedActivity;
+private int preferedPlace;
+private  int type;
 
     public int getUserId() {
         return userId;
@@ -40,6 +45,22 @@ private int fatPercentage;
         this.firstName = firstName;
     }
 
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     public String getLastName() {
         return lastName;
     }
@@ -48,12 +69,21 @@ private int fatPercentage;
         this.lastName = lastName;
     }
 
-    public String getGender() {
+    public int getGender() {
         return gender;
     }
 
-    public void setGender(String gender) {
+    public void setGender(int gender) {
         this.gender = gender;
+    }
+
+    
+    public String getMobile() {
+        return mobile;
+    }
+
+    public void setMobile(String mobile) {
+        this.mobile = mobile;
     }
 
     public String getEmail() {
@@ -80,12 +110,12 @@ private int fatPercentage;
         this.place = place;
     }
 
-    public int getAge() {
-        return age;
+    public Date getBirthDate() {
+        return birthDate;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public void setBirthDate(Date birthDate) {
+        this.birthDate = birthDate;
     }
 
     public int getWeight() {
@@ -112,11 +142,29 @@ private int fatPercentage;
         this.fatPercentage = fatPercentage;
     }
 
-    @Override
-    public String toString() {
-        return "User{" + "userId=" + userId + ", firstName=" + firstName + ", lastName=" + lastName + ", gender=" + gender + ", email=" + email + ", activity=" + activity + ", place=" + place + ", age=" + age + ", weight=" + weight + ", height=" + height + ", fatPercentage=" + fatPercentage + '}';
+    public int getPreferedActivity() {
+        return preferedActivity;
     }
- 
-    
+
+    public void setPreferedActivity(int preferedActivity) {
+        this.preferedActivity = preferedActivity;
+    }
+
+    public int getPreferedPlace() {
+        return preferedPlace;
+    }
+
+    public void setPreferedPlace(int preferedPlace) {
+        this.preferedPlace = preferedPlace;
+    }
+
+    public int getType() {
+        return type;
+    }
+
+    public void setType(int type) {
+        this.type = type;
+    }
+
 
 }

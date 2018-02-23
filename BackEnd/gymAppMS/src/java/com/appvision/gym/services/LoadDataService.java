@@ -3,13 +3,21 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package com.appvision.gym.services;
+
+import com.appvision.gym.model.Exercise;
+import com.appvision.gym.model.Muscle;
+import java.util.List;
 
 /**
  *
  * @author ashraf.ibrahim
  */
 public interface LoadDataService {
-    
+
+    public List<Muscle> loadMainMuscles();
+
+    public List<Muscle> LoadSubMuscles(int mainMuscle);
+    public List<Exercise> LoadMuscleExceriseByMainMuscleId(int mainMuscleId);
+
 }

@@ -9,7 +9,7 @@
 */nb-configuration.xml
 */nbactions.xml
 *.ear
-*.jar 
+
 *.class
 *.war 
 
@@ -21,3 +21,4 @@
 *.log
 .log
 *.log.*
+/BackEnd/gymAppMS/dist/
