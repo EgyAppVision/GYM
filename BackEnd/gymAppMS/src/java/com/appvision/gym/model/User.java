@@ -28,7 +28,7 @@ private int fatPercentage;
 private int preferedActivity;
 private int preferedPlace;
 private  int type;
-
+private int isFollowing ;
     public int getUserId() {
         return userId;
     }
@@ -166,5 +166,12 @@ private  int type;
         this.type = type;
     }
 
+    public int getIsFollowing() {
+        return isFollowing;
+    }
+
+    public void setIsFollowing(int isFollowing) {
+        this.isFollowing = isFollowing;
+    }
 
 }

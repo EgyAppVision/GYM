@@ -13,5 +13,8 @@ import java.util.HashMap;
  * @author ashraf.ibrahim
  */
 public class Defines {
-    public static HashMap propertiesModel = new HashMap();
+    public static int mailSearchingMode =1;
+    public static int moblieSearchingMode =2;
+    public static int twoStringSearchingMode =3;
+    public static int oneStringSearchingMode =4;
 }

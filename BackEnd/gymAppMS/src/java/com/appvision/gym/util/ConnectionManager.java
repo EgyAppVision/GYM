@@ -13,13 +13,13 @@ import java.sql.*;
  */
 public class ConnectionManager {
     
-    
-    public static Connection  getConnection () throws ClassNotFoundException, SQLException{
-        Connection con = null; 
-       
-                Class.forName(Defines.propertiesModel.get("DB_Driver").toString());  
-                 con=DriverManager.getConnection(Defines.propertiesModel.get("DB_URL").toString(),Defines.propertiesModel.get("DB_user").toString(),Defines.propertiesModel.get("DB_password").toString());  
-         
-          return  con ;
-    }
+//    
+//    public static Connection  getConnection () throws ClassNotFoundException, SQLException{
+//        Connection con = null; 
+//       
+//                Class.forName(Defines.propertiesModel.get("DB_Driver").toString());  
+//                 con=DriverManager.getConnection(Defines.propertiesModel.get("DB_URL").toString(),Defines.propertiesModel.get("DB_user").toString(),Defines.propertiesModel.get("DB_password").toString());  
+//         
+//          return  con ;
+//    }
 }

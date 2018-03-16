@@ -13,6 +13,6 @@ public interface UserDao {
         public boolean IsUserNameExist(final String userName);
         public User GetUserByUserNameAndPassword (LoginModel loginModel );
         
-        public List<User> GetAllUsersByName (String name, int userId );
+        public List<User> GetAllUsersByName (String name, int userId , int mode, int place, int activity );
 
 }

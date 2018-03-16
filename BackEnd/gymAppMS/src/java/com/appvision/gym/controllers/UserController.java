@@ -4,6 +4,7 @@ import com.appvision.gym.model.LoginModel;
 import com.appvision.gym.model.User;
 import com.appvision.gym.services.SignupService;
 import java.sql.Connection;
+import java.util.List;
 import javax.validation.Valid;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -85,5 +86,12 @@ public class UserController {
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public User Login(@RequestBody  LoginModel loginModel) {
 		 return signupService.GetUserByUserNameAndPassword(loginModel);
+	}
+        
+        
+        @CrossOrigin(origins = "*")  
+	@RequestMapping(value = "/GetAllUsersByname", method = RequestMethod.GET)
+	public List <User> GetAllUsersByname(@RequestParam  String  name , @RequestParam String userId,@RequestParam String place, @RequestParam String activity) {
+		 return signupService.GetAllUsersByName(name, Integer.valueOf(userId),Integer.valueOf(place),Integer.valueOf(activity));
 	}	
 }
