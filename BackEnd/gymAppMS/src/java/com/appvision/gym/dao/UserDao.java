@@ -6,13 +6,17 @@ import java.sql.Connection;
 import java.util.List;
 
 public interface UserDao {
-	
-	public int userSignUp (User user);
-        
-        public boolean IsMailExist (String mail);
-        public boolean IsUserNameExist(final String userName);
-        public User GetUserByUserNameAndPassword (LoginModel loginModel );
-        
-        public List<User> GetAllUsersByName (String name, int userId , int mode, int place, int activity );
+
+    public int userSignUp(User user);
+
+    public boolean IsMailExist(String mail);
+
+    public boolean IsUserNameExist(final String userName);
+
+    public User GetUserByUserNameAndPassword(LoginModel loginModel);
+
+    public List<User> GetAllUsersByName(String name, int userId, int mode, int place, int activity);
+
+    public boolean Follow(int follower, int follwing);
 
 }

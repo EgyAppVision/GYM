@@ -93,5 +93,11 @@ public class UserController {
 	@RequestMapping(value = "/GetAllUsersByname", method = RequestMethod.GET)
 	public List <User> GetAllUsersByname(@RequestParam  String  name , @RequestParam String userId,@RequestParam String place, @RequestParam String activity) {
 		 return signupService.GetAllUsersByName(name, Integer.valueOf(userId),Integer.valueOf(place),Integer.valueOf(activity));
-	}	
+	}
+        
+        @CrossOrigin(origins = "*")  
+	@RequestMapping(value = "/follow", method = RequestMethod.GET)
+	public boolean follow(@RequestParam  String following , @RequestParam String follower) {
+		 return signupService.Follow(Integer.valueOf(follower), Integer.valueOf(following));
+	}
 }

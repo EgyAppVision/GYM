@@ -86,4 +86,9 @@ public class SignupServiceImpl implements SignupService {
         return matcher.matches();
     }
 
+    @Override
+    public boolean Follow(int follower, int follwing) {
+       return userDao.Follow(follower, follwing);
+    }
+
 }

@@ -284,4 +284,22 @@ public class UserDaoImpl implements UserDao {
         return partialSet;
     }
 
+    @Override
+    public boolean Follow(final int  follower, final int follwing) {
+       PreparedStatementCreator creator = new PreparedStatementCreator() {
+                @Override
+                public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
+                    
+                    PreparedStatement ps = connection.prepareStatement("INSERT INTO user_relation(follower_id,following_id)VALUES(?,?);",
+                            Statement.RETURN_GENERATED_KEYS);
+                    ps.setInt(1, follower);
+                    ps.setInt(2, follwing);
+                    return ps;
+                }
+       };
+       
+       jdbcTemplate.update(creator);
+          return true;      
+    }
+
 }

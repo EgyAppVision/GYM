@@ -14,5 +14,6 @@ public interface SignupService {
         public boolean IsUserNameExist(String userName);
         public User GetUserByUserNameAndPassword (LoginModel loginModel);
         public List<User> GetAllUsersByName (String name, int userId ,int place, int activity);
+        public boolean  Follow (int follower , int follwing );       
 }
 
