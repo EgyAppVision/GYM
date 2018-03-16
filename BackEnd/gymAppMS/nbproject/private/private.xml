@@ -25,8 +25,6 @@
             <file>file:/D:/New%20folder/Final/GYM/BackEnd/gymAppMS/web/WEB-INF/mvc-dispatcher-servlet.xml</file>
             <file>file:/D:/New%20folder/Final/GYM/BackEnd/gymAppMS/src/java/com/appvision/gym/model/WorkoutExcerices.java</file>
         </group>
-        <group name="testing">
-            <file>file:/D:/New%20folder/Final/GYM/BackEnd/gymAppMS/web/WEB-INF/mvc-dispatcher-servlet.xml</file>
-        </group>
+        <group name="testing"/>
     </open-files>
 </project-private>

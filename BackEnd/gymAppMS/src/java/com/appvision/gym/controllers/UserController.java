@@ -1,5 +1,6 @@
 package com.appvision.gym.controllers;
 
+import com.appvision.gym.model.LoginModel;
 import com.appvision.gym.model.User;
 import com.appvision.gym.services.SignupService;
 import java.sql.Connection;
@@ -28,12 +29,23 @@ public class UserController {
     // Content-Type: application/json 
 	// userEmail will be sent in the url like whatyou see in the call
 	@CrossOrigin(origins = "*")  
-	@RequestMapping(value = "/isUser/{userEmail}", method = RequestMethod.GET)
-	public Boolean isUser(
-			@PathVariable("userEmail") String userEmail) {
-		return true;
+	@RequestMapping(value = "/isMailExist", method = RequestMethod.GET)
+	public Boolean isEamilExist(
+			@RequestParam("userEmail") String userEmail) {
+            
+            return signupService.IsMailExist(userEmail);
+            
 	}
 	
+        
+	@CrossOrigin(origins = "*")  
+	@RequestMapping(value = "/isUserNameExist", method = RequestMethod.GET)
+	public Boolean isUserNameExist(
+			@RequestParam("userName") String userName) {
+            
+            return signupService.IsUserNameExist(userName);
+            
+	}
 	//post example
 	// How to call it http://localhost:8080/gymMS/userServices/userSignUp
     // Content-Type: application/json 
@@ -47,9 +59,9 @@ public class UserController {
             debuglog.debug("receving request  " +user.toString() );
             
             //con = ConnectionManager.getConnection();
-            boolean result = signupService.userSignUp(user);
-            if (result)
-                return  "STATUS:" + 0 ;
+            int result = signupService.userSignUp(user);
+            if (result>0)
+                return  "STATUS:" + 0 + ",UserID:"+result;
         }else
         {
             return  "STATUS:" + -3 ;
@@ -69,4 +81,9 @@ public class UserController {
 		return  new User();
 	}
 	
+	@CrossOrigin(origins = "*")  
+	@RequestMapping(value = "/login", method = RequestMethod.POST)
+	public User Login(@RequestBody  LoginModel loginModel) {
+		 return signupService.GetUserByUserNameAndPassword(loginModel);
+	}	
 }
