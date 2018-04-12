@@ -24,23 +24,23 @@
                     <Label x:Name="emailLb"  Grid.Row="3" Grid.Column="1"></Label>
 
                    
-                        <Label Text="Date of birth" FontAttributes="Bold" Grid.Row="5" Grid.Column="0"></Label>
+                        <Label Text="Date of birth" FontAttributes="Bold" Grid.Row="4" Grid.Column="0"></Label>
                     <Label x:Name="dopLb"  Grid.Row="4" Grid.Column="1"></Label>
 
-                        <Label Text="Weight" FontAttributes="Bold" Grid.Row="6" Grid.Column="0"></Label>
+                        <Label Text="Weight" FontAttributes="Bold" Grid.Row="5" Grid.Column="0"></Label>
                     <Label x:Name="weightLb"  Grid.Row="5" Grid.Column="1"></Label>
 
-                        <Label Text="Height" FontAttributes="Bold" Grid.Row="7" Grid.Column="0"></Label>
-                    <Label x:Name="heightLb"  Grid.Row="8" Grid.Column="1"></Label>
+                        <Label Text="Height" FontAttributes="Bold" Grid.Row="6" Grid.Column="0"></Label>
+                    <Label x:Name="heightLb"  Grid.Row="6" Grid.Column="1"></Label>
 
-                        <Label Text="Mobile Number" FontAttributes="Bold" Grid.Row="8" Grid.Column="0"></Label>
-                    <Label x:Name="mobileNoLb"  Grid.Row="9" Grid.Column="1"></Label>
+                        <Label Text="Mobile Number" FontAttributes="Bold" Grid.Row="7" Grid.Column="0"></Label>
+                    <Label x:Name="mobileNoLb"  Grid.Row="7" Grid.Column="1"></Label>
 
-                            <Label Text="Preferred  Place" FontAttributes="Bold" Grid.Row="9" Grid.Column="0"></Label>
-                    <Label x:Name="preferedPlaceLb"  Grid.Row="10" Grid.Column="1"></Label>
+                            <Label Text="Preferred  Place" FontAttributes="Bold" Grid.Row="8" Grid.Column="0"></Label>
+                    <Label x:Name="preferedPlaceLb"  Grid.Row="8" Grid.Column="1"></Label>
 
-                            <Label Text="Preferred  Activity" FontAttributes="Bold" Grid.Row="10" Grid.Column="0"></Label>
-                    <Label x:Name="preferedActivityLb"  Grid.Row="11" Grid.Column="1"></Label>
+                            <Label Text="Preferred  Activity" FontAttributes="Bold" Grid.Row="9" Grid.Column="0"></Label>
+                    <Label x:Name="preferedActivityLb"  Grid.Row="9" Grid.Column="1"></Label>
                 </Grid>
                     </Frame>
                 </ScrollView>

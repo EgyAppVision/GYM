@@ -1,9 +1,11 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using static FitnessTracker.InitialData;
 
 namespace FitnessTracker
 {
@@ -31,6 +33,37 @@ namespace FitnessTracker
 
         }
 
+
+
+        async void GetSignUpData()
+        {
+            string address = "loadDataServices/getSingupData";
+            Request request = new Request();
+            var response = await request.callService(address, "", "GET");
+            if (response.status == true)
+            {
+                RootObject Data = JsonConvert.DeserializeObject<RootObject>(response.content);
+
+                if (Application.Current.Properties.ContainsKey("signUpData"))
+                {
+                    Application.Current.Properties["signUpData"] = Data;
+                
+                }
+
+                else
+                {
+                    Application.Current.Properties.Add("signUpData",  Data);
+                }
+
+            }
+            else
+            {
+                await DisplayAlert("Error", "Network Error", "OK");
+               // await Navigation.PushAsync(new MainPage());
+
+            }
+
+        }
 
 
         async private void GotoLogin_Click(object sender, EventArgs e)

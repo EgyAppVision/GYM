@@ -27,7 +27,7 @@
                     </Frame>
                     <Frame Grid.Row="1" VerticalOptions="CenterAndExpand"  CornerRadius="4"  BackgroundColor="White" 
        Padding="0">
-                        <Entry  x:Name="PasswordEntry" Placeholder="Password" Keyboard="Password" IsPassword="True" FontSize="Default" PlaceholderColor="#EEEFF1" ></Entry>
+                        <Entry  x:Name="PasswordEntry" Placeholder="Password" IsPassword="True" FontSize="Default" PlaceholderColor="#EEEFF1" ></Entry>
                     </Frame>
 
 
