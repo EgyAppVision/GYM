@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FitnessTracker.SignUp2">
+    <ContentPage.Title>Body Information</ContentPage.Title>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <ScrollView  >
+
+                        <Grid VerticalOptions="FillAndExpand" Padding="0" BackgroundColor="#58D0A2">
+
+
+                            <Frame   VerticalOptions="CenterAndExpand"  Margin="20,20,20,20" CornerRadius="8" HasShadow="True" BackgroundColor="#EEEFF1" 
+       Padding="0">
+                                <Grid  RowSpacing="40"   Padding="20">
+
+                            <Frame  Grid.Row="0" VerticalOptions="CenterAndExpand"  CornerRadius="4"  BackgroundColor="White" 
+       Padding="0">
+                                <DatePicker x:Name="DOPPicker" VerticalOptions="CenterAndExpand"   ></DatePicker>
+                            </Frame>
+                            <Frame Grid.Row="1" VerticalOptions="CenterAndExpand"  CornerRadius="4"  BackgroundColor="White" 
+       Padding="0">
+                                        <Entry x:Name="weightEntry" Placeholder="Weight*" Keyboard="Numeric" FontSize="Default" PlaceholderColor="Gray" ></Entry>
+                                    </Frame>
+
+
+                                    <Frame Grid.Row="2"  VerticalOptions="CenterAndExpand"  CornerRadius="4"  BackgroundColor="White" 
+       Padding="0">
+                                        <Entry  x:Name="heightEntry" Placeholder="Height*"  Keyboard="Numeric" FontSize="Default"  PlaceholderColor="Gray"></Entry>
+                                    </Frame>
+
+
+                                    <Frame Grid.Row="3"  VerticalOptions="CenterAndExpand"  CornerRadius="4"  BackgroundColor="White" 
+       Padding="0">
+                                        <Picker  x:Name="ActivityPicker" Title="Type Of Activity*" />
+
+                                    </Frame>
+
+
+                                  
+
+                                    <Frame Grid.Row="4" VerticalOptions="CenterAndExpand"  CornerRadius="4"  WidthRequest="40" BackgroundColor="White" 
+       Padding="0">
+                                        <Entry x:Name="fatperEntry"  Placeholder="Fat Percentage*" Keyboard="Numeric" FontSize="Default" PlaceholderColor="Gray" ></Entry>
+                                    </Frame>
+
+                                    <Label x:Name="validationMsgLb" HorizontalOptions="CenterAndExpand"  Text="" Grid.Row="5" TextColor="Red" FontSize="Small"></Label>
+
+
+                                    <Button Grid.Row="6" HorizontalOptions="CenterAndExpand" BackgroundColor="#58D0A2"  BorderRadius="5" Text="Next" Clicked="Next2_click" />
+
+
+                                </Grid>
+                            </Frame>
+
+                        </Grid>
+                   
+            </ScrollView>
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

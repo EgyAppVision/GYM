@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FitnessTracker.NewPostPage"
+             Title="New Activity"
+             >
+    <ContentPage.Content>
+
+
+
+        <StackLayout Margin="10,10,10,0" VerticalOptions="StartAndExpand" BackgroundColor="White">
+
+            <StackLayout  HorizontalOptions="EndAndExpand" >
+                <Image HorizontalOptions="Center" Source="addButton.png" x:Name="addImage"></Image>
+                <Label Text="Add New Set" FontAttributes="Bold" HorizontalOptions="Center"  Margin="0,0,0,20"></Label>
+
+                <ScrollView HorizontalOptions="FillAndExpand" >
+
+
+                    <Grid x:Name="setsGrid" HorizontalOptions="FillAndExpand" >
+
+
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+
+                        </Grid.ColumnDefinitions>
+                        <!--<StackLayout HorizontalOptions="FillAndExpand"  Orientation="Horizontal" >-->
+                        <Label Margin="0,0,0,20" FontAttributes="Bold" Grid.Column="0" Grid.Row="0"  Text="No" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand"></Label>
+                        <Label Margin="0,0,0,20" FontAttributes="Bold" Grid.Column="1" Grid.Row="0"  Text="Activity" HorizontalTextAlignment="Center"  HorizontalOptions="CenterAndExpand"></Label>
+                        <Label Margin="0,0,0,20" FontAttributes="Bold" Grid.Column="2" Grid.Row="0" Text="Distance"  HorizontalTextAlignment="Center"  HorizontalOptions="CenterAndExpand"></Label>
+                        <Label Margin="0,0,0,20" FontAttributes="Bold" Grid.Column="3" Grid.Row="0" Text=" Duration  "  HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" ></Label>
+                        <Label Margin="0,0,0,20" FontAttributes="Bold" Grid.Column="4" Grid.Row="0" Text=" Delete "  HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" ></Label>
+                        <!--</StackLayout>-->
+
+
+                        <!--<Label Grid.Column="0" Grid.Row="1" Text="1" HorizontalOptions="Center"  VerticalTextAlignment="Center"  HorizontalTextAlignment="Center" VerticalOptions="End" ></Label>
+                        <Entry Grid.Column="1" Grid.Row="1" Keyboard="Numeric" VerticalOptions="Center"  HorizontalTextAlignment="Center" ></Entry>
+                        <Entry Grid.Column="2" Grid.Row="1" Keyboard="Numeric" VerticalOptions="Center"  HorizontalTextAlignment="Center"></Entry>
+                        <Picker Grid.Column="3" Grid.Row="1" x:Name="partsPicker"  VerticalOptions="Center"   HorizontalOptions="FillAndExpand"></Picker>
+                        <TimePicker Grid.Column="4" Grid.Row="1" VerticalOptions="Center"  HorizontalOptions="Center"></TimePicker>-->
+
+
+
+
+
+
+                    </Grid>
+
+                </ScrollView>
+
+                <!--<TableView>
+                    <TableRoot>
+                        <TableSection x:Name="setsTable">
+                            <ViewCell>
+                                <Grid >
+                                    <Label Grid.Column="0"   Text="Set No" HorizontalTextAlignment="Center"></Label>
+                                    <Label Grid.Column="1"  Text="Reps" HorizontalTextAlignment="Center" ></Label>
+                                    <Label Grid.Column="2" Text="Weight"  HorizontalTextAlignment="Center" ></Label>
+                                    <Label Grid.Column="3" Text="Parts"  HorizontalTextAlignment="Center" ></Label>
+                                    <Label Grid.Column="4" Text="Time"  HorizontalTextAlignment="Center" ></Label>
+                                </Grid>
+                            </ViewCell>-->
+
+
+
+
+                <!--<ViewCell>
+                                <Grid >
+                                    <Label Text="1" Grid.Column="0"  HorizontalTextAlignment="Center" ></Label>
+                                    <Entry Grid.Column="1" Keyboard="Numeric"   HorizontalTextAlignment="Center" ></Entry>
+                                    <Entry Grid.Column="2" Keyboard="Numeric"   HorizontalTextAlignment="Center"></Entry>
+                                    <Picker x:Name="PartsPicker" Grid.Column="3" Grid.ColumnSpan="2"   HorizontalOptions="FillAndExpand"></Picker>
+                                    <TimePicker  Grid.Column="5"  HorizontalOptions="Center"></TimePicker>
+                                </Grid>
+                            </ViewCell>-->
+                <!--</TableSection>
+                    </TableRoot>
+                </TableView>-->
+                <Label Margin="10,10,10,0"  HorizontalOptions="Start" Text="Your Comment: "></Label>
+                <Editor x:Name="workoutNoteTxt" BackgroundColor="WhiteSmoke" Margin="10,0,10,10" HeightRequest="70"  ></Editor>
+                <!--<StackLayout Orientation="Horizontal">
+                    <Image  HeightRequest="40" WidthRequest="40" x:Name="postImg" HorizontalOptions="Start"  Margin="10,0,10,10"  Source="imgIcon.png"></Image>
+
+                    <Image Source="checkIn.png" x:Name="CheckInImg" HorizontalOptions="Start" HeightRequest="35" WidthRequest="40"></Image>
+
+
+                </StackLayout>-->
+
+
+            </StackLayout>
+            <Button x:Name="SubmitButton" Clicked="SubmitButton_Clicked" HorizontalOptions="Center" Margin="0,0,0,20"  BackgroundColor="#58D0A2" TextColor="WhiteSmoke" Text="   Post Activity   "></Button>
+        </StackLayout>
+
+
+        <!--<StackLayout Margin="10,10,10,0" VerticalOptions="StartAndExpand" BackgroundColor="White">
+            <Label Margin="10,10,10,0"  HorizontalOptions="Start" Text="your comment :"></Label>
+            <Editor x:Name="noteTxt" BackgroundColor="WhiteSmoke" Margin="10,0,10,10" HeightRequest="70"  ></Editor>
+            <StackLayout Orientation="Horizontal">
+                <Image  HeightRequest="40" WidthRequest="40" x:Name="postImg"  Margin="10,0,10,10"  HorizontalOptions="Start" Source="imgIcon.png"></Image>
+                <Image Source="checkIn.png" x:Name="CheckInImg" HorizontalOptions="End" HeightRequest="35" WidthRequest="40"></Image>
+            </StackLayout>
+                <StackLayout HorizontalOptions="Center" >
+                    
+                <TableView Intent="Settings">
+                    <TableRoot>
+                        <TableSection x:Name="OptionsTable">
+
+                            <ViewCell>
+                                <StackLayout HeightRequest="25"  Margin="10,10,10,10" Orientation="Horizontal">
+                                    <Image Source="runningIcon.png"></Image>
+                                    <Label Text="Activity" Margin="3,0,0,5"
+                              TextColor="Black" VerticalOptions="Center" />
+                                    <Picker x:Name="ActivityPicker" VerticalOptions="FillAndExpand"  HorizontalOptions="FillAndExpand"  />
+
+                                </StackLayout>
+                            </ViewCell>
+                            <ViewCell>
+                                <StackLayout Margin="10,10,10,10" Orientation="Horizontal">
+                                    <Image Source="distance.png"></Image>
+                                    <Label Text="Distance" Margin="3,0,0,0"
+                              TextColor="Black" VerticalOptions="Center" />
+                                    <Entry x:Name="distanceEntry" HorizontalTextAlignment="Center" VerticalOptions="Fill" Keyboard="Numeric" HorizontalOptions="FillAndExpand" Placeholder="0km" />
+
+                                </StackLayout>
+                            </ViewCell>
+ 
+                            <ViewCell>
+                                <StackLayout  Orientation="Horizontal">
+                                    <Image Source="stopwatch.png"></Image>
+
+                                    <Label Text="Duration" 
+                              TextColor="Black" VerticalOptions="Center" />
+                                    <Entry x:Name="durationEntry" HorizontalTextAlignment="Center" Keyboard="Numeric" HorizontalOptions="FillAndExpand"  />
+
+                                </StackLayout>
+                            </ViewCell>
+                            --><!--<ViewCell>
+                                <StackLayout  Orientation="Horizontal">
+                                    <Image Margin="5,0,0,0" Source="clock.png"></Image>
+
+                                    <Label Text="start time" 
+                              TextColor="Black" VerticalOptions="Center" />
+                                    <TimePicker x:Name="timePicker"  HorizontalOptions="Center" />
+
+                                </StackLayout>
+                            </ViewCell>--><!--
+                            
+                            
+                            
+                        </TableSection>
+                    </TableRoot>
+                </TableView>
+
+                
+            </StackLayout>
+            <Button x:Name="submitButton" Clicked="Submit_clicked" HorizontalOptions="Center" Margin="0,0,0,20"  BackgroundColor="#58D0A2" TextColor="WhiteSmoke" Text="   Post Activity   "></Button>
+        </StackLayout>-->
+    </ContentPage.Content>
+</ContentPage>

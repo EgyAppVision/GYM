@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FitnessTracker.MenuPage"
+            >
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+
+            <StackLayout>
+                <Image WidthRequest="100" HeightRequest="100" Margin="0,10,0,0" HorizontalOptions="Center" Source="C:\FitnessTracker\FitnessTracker\FitnessTracker\profile.jpg"></Image>
+                <Label TextColor="White"  FontSize="Medium" Text="User Name" HorizontalOptions="Center"></Label>
+                <BoxView  HeightRequest="40"></BoxView>
+            </StackLayout>
+
+            <StackLayout BackgroundColor="Gray" Margin="0,10,0,0" Orientation="Vertical" Spacing="35">
+               
+                <StackLayout x:Name="myInfoStackLy" Spacing="30" Orientation="Horizontal" >
+                        
+                        <Image  WidthRequest="20" HeightRequest="20" Source="C:\FitnessTracker\FitnessTracker\FitnessTracker\contacts.png"></Image>
+                        <Label VerticalOptions="Center" TextColor="Gray" Text="Notifications"></Label>
+                    </StackLayout>
+            <StackLayout Spacing="30" Orientation="Horizontal" >
+
+                <Image WidthRequest="20" HeightRequest="20" Source="C:\FitnessTracker\FitnessTracker\FitnessTracker\todo.png"></Image>
+                    <Label TextColor="Gray"  VerticalOptions="Center" Text="Gym Entrance"></Label>
+                    </StackLayout>
+            <StackLayout Spacing="30" Orientation="Horizontal" >
+
+                <Image WidthRequest="20" HeightRequest="20" Source="C:\FitnessTracker\FitnessTracker\FitnessTracker\contacts.png"></Image>
+                    <Label TextColor="Gray"  VerticalOptions="Center" Text="Muscles"></Label>
+                    </StackLayout>
+
+                <StackLayout Spacing="30" Orientation="Horizontal" >
+
+                    <Image WidthRequest="20" HeightRequest="20" Source="C:\FitnessTracker\FitnessTracker\FitnessTracker\contacts.png"></Image>
+                    <Label TextColor="Gray"  VerticalOptions="Center" Text="Calculator"></Label>
+                </StackLayout>
+                <StackLayout Spacing="30" Orientation="Horizontal" >
+
+                    <Image WidthRequest="20" HeightRequest="20" Source="C:\FitnessTracker\FitnessTracker\FitnessTracker\contacts.png"></Image>
+                    <Label VerticalOptions="Center" Text="Info"></Label>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
