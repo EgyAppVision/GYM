@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using static FitnessTracker.InitialData;
 
 namespace FitnessTracker
 {
@@ -14,7 +15,7 @@ namespace FitnessTracker
     public partial class NewPostPage : ContentPage
     {
         Player Playeruser;
-        List<string> activityList;
+        List<UserPrefaredActivity> activityList;
         int rows = 2;
 
         public NewPostPage(Player user)
@@ -25,15 +26,8 @@ namespace FitnessTracker
             Playeruser = user;
 
             this.Title = "Cardio";
-            activityList = new List<string>();
-            activityList.Add("Running");
-            activityList.Add("Cycling");
-            activityList.Add("Boxing");
-            activityList.Add("Crosfit");
-            activityList.Add("Squats");
-            // activityList.Add("Yoga");
-            // activityList.Add("Push Ups");
-            activityList.Add("Swimming");
+            activityList = new List<UserPrefaredActivity>();
+            GetSignUpDataFromLocalStorage();
 
 
             AddNewRow(1);
@@ -69,10 +63,85 @@ namespace FitnessTracker
 
 
         }
+        public async void GetSignUpDataFromLocalStorage()
+        {
+            if (Application.Current.Properties.ContainsKey("signUpData") && Application.Current.Properties["signUpData"] != null)
+            {
+                RootObject signupDataObj = Application.Current.Properties["signUpData"] as RootObject;
+
+                //   RootObject Data = JsonConvert.DeserializeObject<RootObject>(signupDataStr);
+                activityList = signupDataObj.userPrefaredActivity;
+              
+               // placesList = signupDataObj.userPrefaredPlace;
+
+            }
+
+            else
+            {
+                GetSignUpData();
+            }
 
 
 
+        }
 
+
+        async void GetSignUpData()
+        {
+            string address = "loadDataServices/getSingupData";
+            Request request = new Request();
+            var response = await request.callService(address, "", "GET");
+            if (response.status == true)
+            {
+                RootObject DataFresh = JsonConvert.DeserializeObject<RootObject>(response.content);
+
+                if (Application.Current.Properties.ContainsKey("signUpData"))
+                {
+                    Application.Current.Properties["signUpData"] = DataFresh;
+
+                }
+
+                else
+                {
+                    Application.Current.Properties.Add("signUpData", DataFresh);
+                }
+
+                activityList = DataFresh.userPrefaredActivity;
+                List<string> values = new List<string>();
+                foreach(var ac in activityList)
+                {
+                    values.Add(ac.value);
+                }
+                var children = setsGrid.Children.ToList(); 
+
+                foreach (var child in children)
+                {
+                    if(child is Picker)
+
+
+                    {
+                        var picker = (Picker)child;
+                        picker.ItemsSource = values;
+                        picker.SelectedIndex = 0;
+
+                    }
+                }
+
+
+               
+                //placesList = DataFresh.userPrefaredPlace;
+
+                //preferedActivityLb.Text = activitiesList.Count() != 0 ? activitiesList.Find(a => a.id == user.preferedActivity).value : "";
+               // preferedPlaceLb.Text = placesList.Count != 0 ? placesList.Find(p => p.id == user.preferedPlace).value : "";
+
+            }
+            else
+            {
+                await DisplayAlert("Error", "Network Error", "OK");
+                // await Navigation.PushAsync(new MainPage());
+            }
+
+        }
 
 
 
@@ -95,7 +164,11 @@ namespace FitnessTracker
             partsPicker.HorizontalOptions = LayoutOptions.FillAndExpand;
             partsPicker.VerticalOptions = LayoutOptions.FillAndExpand;
 
-            partsPicker.ItemsSource = activityList;
+            //partsPicker.ItemsSource = activityList;
+            foreach(var act in activityList)
+            {
+                partsPicker.Items.Add(act.value);
+            }
             partsPicker.SelectedIndex = 0;
 
             Entry repsEntry = new Entry();
