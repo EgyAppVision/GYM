@@ -13,6 +13,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCreator;
@@ -27,13 +28,14 @@ import org.springframework.stereotype.Repository;
 @Repository("workout")
 public class WorkoutDaoImp implements WorkoutDao{
 
-    
+    private Logger debuglog = Logger.getLogger("debuglog");
      @Autowired
     private JdbcTemplate jdbcTemplate;
      
     @Override
-    public boolean AddWorkOut(final Workout workout) {
+    public boolean AddWorkOut(final Workout workout) throws Exception{
        KeyHolder key = new GeneratedKeyHolder();
+       try{
        PreparedStatementCreator creator = new PreparedStatementCreator() {
       @Override
       public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
@@ -52,10 +54,14 @@ public class WorkoutDaoImp implements WorkoutDao{
    
    for (WorkoutExcerices exercise :  workout.getWorkoutExcerices())
    {
-       String Sql =  "INSERT INTO user_workout_exercies(user_workout_exercies_workout,user_workout_exercies_exercies,user_workout_exercies_trainee_comment)VALUES("+id+","+exercise.getExcericeId()+","+exercise.getExcericeDescreption()+")";
+       String Sql =  "INSERT INTO user_workout_exercies(user_workout_exercies_workout,user_workout_exercies_exercies,user_workout_exercies_trainee_comment)VALUES("+id+","+exercise.getExcericeId()+",'"+exercise.getExcericeDescreption()+"')";
     jdbcTemplate.update(Sql);
    }
        return true;
+    }catch(Exception ex)
+    {
+        debuglog.error("error while excutin sql >>  Error :" + ex.getMessage(), ex);
+        throw ex;
     }
-    
+    }
 }

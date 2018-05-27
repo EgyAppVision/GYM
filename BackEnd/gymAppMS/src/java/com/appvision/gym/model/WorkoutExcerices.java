@@ -6,11 +6,17 @@
 
 package com.appvision.gym.model;
 
+import javax.validation.constraints.DecimalMin;
+import javax.validation.constraints.NotNull;
+
 /**
  *
  * @author ashraf.ibrahim
  */
 public class WorkoutExcerices {
+    
+    @NotNull
+    @DecimalMin(message = "Wrong excericeId ", value = "1")
     private  int excericeId;
     
     private String excericeDescreption;

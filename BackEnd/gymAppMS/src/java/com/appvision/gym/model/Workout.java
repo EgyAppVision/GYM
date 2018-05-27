@@ -8,12 +8,18 @@ package com.appvision.gym.model;
 
 import java.util.List;
 import com.appvision.gym.model.Exercise;
+import javax.validation.constraints.DecimalMin;
+import javax.validation.constraints.NotNull;
 /**
  *
  * @author ashraf.ibrahim
  */
 public class Workout {
+    
+    
     private  String workOutDes; 
+    @NotNull
+    @DecimalMin(message = "Wrong TraineeId ", value = "1")
     private int workoutTrainee;
     private  List<WorkoutExcerices>  workoutExcerices ; 
 

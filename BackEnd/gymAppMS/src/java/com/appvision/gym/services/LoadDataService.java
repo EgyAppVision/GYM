@@ -15,9 +15,9 @@ import java.util.List;
  */
 public interface LoadDataService {
 
-    public List<Muscle> loadMainMuscles();
+    public List<Muscle> loadMainMuscles() throws Exception;
 
-    public List<Muscle> LoadSubMuscles(int mainMuscle);
-    public List<Exercise> LoadMuscleExceriseByMainMuscleId(int mainMuscleId);
+    public List<Muscle> LoadSubMuscles(int mainMuscle) throws Exception ;
 
+    public List<Exercise> LoadMuscleExceriseByMainMuscleId(int mainMuscleId)throws Exception;
 }

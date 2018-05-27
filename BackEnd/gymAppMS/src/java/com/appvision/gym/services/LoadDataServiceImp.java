@@ -24,17 +24,17 @@ public class LoadDataServiceImp implements LoadDataService{
 LoadDataDao loadDataDao;
     
     @Override
-    public List<Muscle> loadMainMuscles() {
+    public List<Muscle> loadMainMuscles() throws Exception{
       return loadDataDao.loadMainMuscles();
     }
 
     @Override
-    public List<Muscle> LoadSubMuscles(int mainMuscle) {
+    public List<Muscle> LoadSubMuscles(int mainMuscle)  throws Exception {
      return loadDataDao.LoadSubMuscles(mainMuscle);
     }
 
     @Override
-    public List<Exercise> LoadMuscleExceriseByMainMuscleId(int mainMuscleId) {
+    public List<Exercise> LoadMuscleExceriseByMainMuscleId(int mainMuscleId) throws Exception{
        return   loadDataDao.LoadMuscleExceriseByMainMuscleId(mainMuscleId);
     }
     

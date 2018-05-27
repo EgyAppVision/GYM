@@ -10,42 +10,49 @@ import com.appvision.gym.model.User;
 import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service("securityService")
 public class SignupServiceImpl implements SignupService {
 
+    
+ private Logger debuglog = Logger.getLogger("debuglog");
     @Autowired
     private UserDao userDao;
     @Autowired
     private LoadDataDao loadDataDao;
 
-    private String mailPattern
-            = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
-            + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
-    private String numPattern = "[0-9]+";
+
 
     @Override
     public int userSignUp(User user) {
+        debuglog.debug("server request ");
         return userDao.userSignUp(user);
     }
 
     @Override
-    public SingupDataModel loadData() {
+    public SingupDataModel loadData() throws Exception {
 
-        SingupDataModel dataModel = new SingupDataModel();
-        List<LookupModel> genderList = loadDataDao.loadUserGender();
-        List<LookupModel> preferedplaces = loadDataDao.loadUserPrefaredPlace();
-        List<LookupModel> preferedactivities = loadDataDao.loadUserPrefaredActivity();
-        List<LookupModel> userType = loadDataDao.loadUserType();
-        dataModel.setUserGender(genderList);
-        dataModel.setUserPrefaredActivity(preferedactivities);
-        dataModel.setUserPrefaredPlace(preferedplaces);
-        dataModel.setUserType(userType);
-        return dataModel;
+     try {
+         SingupDataModel dataModel = new SingupDataModel();
+         List<LookupModel> genderList = loadDataDao.loadUserGender();
+         List<LookupModel> preferedplaces = loadDataDao.loadUserPrefaredPlace();
+         List<LookupModel> preferedactivities = loadDataDao.loadUserPrefaredActivity();
+         List<LookupModel> userType = loadDataDao.loadUserType();
+         dataModel.setUserGender(genderList);
+         dataModel.setUserPrefaredActivity(preferedactivities);
+         dataModel.setUserPrefaredPlace(preferedplaces);
+         dataModel.setUserType(userType);
+         return dataModel;
+     } catch (Exception ex) {
+         debuglog.debug("an error has occured " +  ex.getMessage());
+     throw  ex;
+     }
     }
 
     @Override
@@ -59,23 +66,35 @@ public class SignupServiceImpl implements SignupService {
     }
 
     @Override
-    public User GetUserByUserNameAndPassword(LoginModel loginModel) {
+    public User GetUserByUserNameAndPassword(LoginModel loginModel)throws Exception {
         return userDao.GetUserByUserNameAndPassword(loginModel);
     }
 
     @Override
-    public List<User> GetAllUsersByName(String name, int userId,int place, int activity) {
+    public List<User> GetAllUsersByName(String name, int userId,int place, int activity)throws Exception{
+       try{
+           
         name = name.trim().toLowerCase();
-        if (matchMailRegx(name, mailPattern)) {
+        debuglog.debug("Scaning Key" + name );
+        if (matchMailRegx(name, Defines.mailPattern)) {
+            debuglog.debug("E-mail Found selecting by Email " );
             return userDao.GetAllUsersByName(name, userId, Defines.mailSearchingMode , place,  activity);
-        } else if (matchMailRegx(name, numPattern)) {
+        } else if (matchMailRegx(name, Defines.mobilePattern)) {
+            debuglog.debug("Mobile Found selecting by mobile " );
             return userDao.GetAllUsersByName(name, userId, Defines.moblieSearchingMode, place,  activity);
         } else if (name.contains(" ")) {
+            debuglog.debug("firstName and lastName Found selecting by Fristname and lastname  " );
             return userDao.GetAllUsersByName(name, userId, Defines.twoStringSearchingMode, place,  activity);
         } else {
+            debuglog.debug("will be selecting by one work as  frist name and last name " );
             return userDao.GetAllUsersByName(name, userId, Defines.oneStringSearchingMode ,  place,  activity);
         }
-
+       }catch(Exception ex ) 
+       {
+           debuglog.error("An Error has Occured " +ex.getMessage(), ex  );
+           throw ex;
+       }
+       
     }
 
     private boolean matchMailRegx(String Str, String patternStr) {

@@ -13,6 +13,7 @@ import javax.validation.Valid;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -35,19 +36,27 @@ public class WorkoutController {
     @CrossOrigin(origins = "*")  
 	@RequestMapping(value = "/addworkout", method = RequestMethod.POST)
 	public String Addworkout(@Valid @RequestBody   Workout workout,BindingResult bindingResult) {
-		
+		debuglog.debug("#####################Start#############################");
         if ( !bindingResult.hasErrors()){
             debuglog.debug("receving request  " +workout.toString() );
-            
-            //con = ConnectionManager.getConnection();
+           try {
             boolean result = workoutService.AddWorkOut(workout);
-            if (result)
+          
                 return  "STATUS:" + 0 ;
+           }catch(Exception ex )
+           {
+                return  "STATUS:" + -3 ;
+           }
         }else
         {
-            return  "STATUS:" + -3 ;
+              debuglog.debug("Invaild following inptus ");
+            for (ObjectError error : bindingResult.getAllErrors()) {
+                debuglog.debug(error.getDefaultMessage());
+            }
+            debuglog.debug("#####################End#############################");
+            return "STATUS:-1";
         }
             
-            return  "STATUS:" + -1 ;
+           
 	}
 }

@@ -15,5 +15,5 @@ import com.appvision.gym.model.Workout;
 
 public interface WorkoutService {
     
-    public boolean AddWorkOut(Workout workout);
+    public boolean AddWorkOut(Workout workout)throws Exception;
 }

@@ -16,5 +16,5 @@ import org.springframework.stereotype.Repository;
 
 public interface WorkoutDao {
     
-    public boolean AddWorkOut(Workout workout);
+    public boolean AddWorkOut(Workout workout) throws Exception;
 }
