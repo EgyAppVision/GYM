@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FitnessTracker.WallPage"
+             Title="Feeds">
+    <ContentPage.Content>
+        <StackLayout>
+        <ScrollView BackgroundColor="#F7F7F7" >
+            <StackLayout  x:Name="containerStack" Orientation="Vertical">
+            <!--<StackLayout BackgroundColor="#FFFFFF" Margin="20,20,20,35"  Orientation="Vertical">
+
+                <StackLayout Margin="10,10,10,10"  Orientation="Horizontal">
+                            <Image  Margin="10,0,10,0" HeightRequest="40" WidthRequest="40" Source="profile.jpg">
+                            </Image>
+                        <StackLayout Spacing="0.5" VerticalOptions="Center" Orientation="Vertical">
+                        <Label TextColor="#595959" FontSize="Large" Text="User Name"></Label>
+                        <Label TextColor="LightGray" FontSize="Small" VerticalOptions="Start" Text="3h ago"></Label>
+                    </StackLayout>
+                </StackLayout>
+                    <StackLayout HeightRequest="350" Orientation="Horizontal">
+
+                            <Image  x:Name="postImg"  Margin="10,10,10,10" Aspect="AspectFill" HorizontalOptions="FillAndExpand" Source="trainingImg1.jpg"></Image>
+             </StackLayout>
+                        <StackLayout Margin="10,0,10,10" Orientation="Vertical">
+                    <Label  TextColor="#58D0A2" FontSize="Large" Text="News Title"></Label>
+                    <Label FontSize="Medium" TextColor="Silver" Text=" Xamarin's website says that forms are good to go for any app-over-data type business apps, unfortunately I do not agree plplplplplplplplsfkjgifjgojpekgpojgjjgojotjgjgj "></Label>
+                </StackLayout>
+                <StackLayout>
+                </StackLayout>
+            </StackLayout>
+
+                    <StackLayout BackgroundColor="#FFFFFF" Margin="20,20,20,35"  Orientation="Vertical">
+
+                        <StackLayout Margin="10,10,10,10"  Orientation="Horizontal">
+                            <Image  Margin="10,0,10,0" HeightRequest="40" WidthRequest="40" Source="profile.jpg">
+                            </Image>
+                            <StackLayout Spacing="0.5" VerticalOptions="Center" Orientation="Vertical">
+                                <Label TextColor="#595959" FontSize="Large" Text="User Name"></Label>
+                                <Label TextColor="LightGray" FontSize="Small" VerticalOptions="Start" Text="3h ago"></Label>
+                            </StackLayout>
+                        </StackLayout>
+                        <StackLayout HeightRequest="350" Orientation="Horizontal">
+
+                            <Image  x:Name="posteImg"  Margin="10,10,10,10" Aspect="AspectFill" HorizontalOptions="FillAndExpand" Source="trainingImg2.jpg"></Image>
+                        </StackLayout>
+                        <StackLayout Margin="10,0,10,10" Orientation="Vertical">
+                            <Label  TextColor="#58D0A2" FontSize="Large" Text="News Title"></Label>
+                            <Label FontSize="Medium" TextColor="Silver" Text=" Xamarin's website says that forms are good to go for any app-over-data type business apps, unfortunately I do not agree plplplplplplplplsfkjgifjgojpekgpojgjjgojotjgjgj "></Label>
+                        </StackLayout>
+                        <StackLayout>
+                        </StackLayout>
+                    </StackLayout>-->
+                  
+                </StackLayout>
+               
+        </ScrollView>
+            <StackLayout BackgroundColor="#c9c5c5"  Opacity="0.7" >
+                <Image x:Name="newPostImg" Margin="0,5,0,0" WidthRequest="30" HeightRequest="30" VerticalOptions="Center" HorizontalOptions="Center" Source="addButton.png"></Image>
+                <Label Text="New Workout" VerticalOptions="Center" Margin="0,0,0,5" TextColor="Black" FontAttributes="Bold" HorizontalOptions="Center"></Label>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

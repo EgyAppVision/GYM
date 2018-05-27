@@ -1,0 +1,126 @@
+c:\users\radwa\documents\visual studio 2015\Projects\FitnessTracker\FitnessTracker\FitnessTracker\bin\Debug\FitnessTracker.dll
+c:\users\radwa\documents\visual studio 2015\Projects\FitnessTracker\FitnessTracker\FitnessTracker\bin\Debug\FitnessTracker.pdb
+c:\users\radwa\documents\visual studio 2015\Projects\FitnessTracker\FitnessTracker\FitnessTracker\bin\Debug\Xamarin.Forms.Core.dll
+c:\users\radwa\documents\visual studio 2015\Projects\FitnessTracker\FitnessTracker\FitnessTracker\bin\Debug\Xamarin.Forms.Platform.dll
+c:\users\radwa\documents\visual studio 2015\Projects\FitnessTracker\FitnessTracker\FitnessTracker\bin\Debug\Xamarin.Forms.Xaml.dll
+c:\users\radwa\documents\visual studio 2015\Projects\FitnessTracker\FitnessTracker\FitnessTracker\bin\Debug\Xamarin.Forms.Core.pdb
+c:\users\radwa\documents\visual studio 2015\Projects\FitnessTracker\FitnessTracker\FitnessTracker\bin\Debug\Xamarin.Forms.Core.xml
+c:\users\radwa\documents\visual studio 2015\Projects\FitnessTracker\FitnessTracker\FitnessTracker\bin\Debug\Xamarin.Forms.Platform.pdb
+c:\users\radwa\documents\visual studio 2015\Projects\FitnessTracker\FitnessTracker\FitnessTracker\bin\Debug\Xamarin.Forms.Xaml.pdb
+c:\users\radwa\documents\visual studio 2015\Projects\FitnessTracker\FitnessTracker\FitnessTracker\bin\Debug\Xamarin.Forms.Xaml.xml
+c:\users\radwa\documents\visual studio 2015\Projects\FitnessTracker\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.MainPage.xaml.g.cs
+c:\users\radwa\documents\visual studio 2015\Projects\FitnessTracker\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.App.xaml.g.cs
+c:\users\radwa\documents\visual studio 2015\Projects\FitnessTracker\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.Login.xaml.g.cs
+c:\users\radwa\documents\visual studio 2015\Projects\FitnessTracker\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.SignUp.xaml.g.cs
+c:\users\radwa\documents\visual studio 2015\Projects\FitnessTracker\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.SignUp2.xaml.g.cs
+c:\users\radwa\documents\visual studio 2015\Projects\FitnessTracker\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.WallPage.xaml.g.cs
+c:\users\radwa\documents\visual studio 2015\Projects\FitnessTracker\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.dll
+c:\users\radwa\documents\visual studio 2015\Projects\FitnessTracker\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.pdb
+C:\FitnessTracker\FitnessTracker\FitnessTracker\bin\Debug\FitnessTracker.dll
+C:\FitnessTracker\FitnessTracker\FitnessTracker\bin\Debug\FitnessTracker.pdb
+C:\FitnessTracker\FitnessTracker\FitnessTracker\bin\Debug\Newtonsoft.Json.dll
+C:\FitnessTracker\FitnessTracker\FitnessTracker\bin\Debug\Xamarin.Forms.Core.dll
+C:\FitnessTracker\FitnessTracker\FitnessTracker\bin\Debug\Xamarin.Forms.Platform.dll
+C:\FitnessTracker\FitnessTracker\FitnessTracker\bin\Debug\Xamarin.Forms.Xaml.dll
+C:\FitnessTracker\FitnessTracker\FitnessTracker\bin\Debug\Newtonsoft.Json.xml
+C:\FitnessTracker\FitnessTracker\FitnessTracker\bin\Debug\Xamarin.Forms.Core.pdb
+C:\FitnessTracker\FitnessTracker\FitnessTracker\bin\Debug\Xamarin.Forms.Core.xml
+C:\FitnessTracker\FitnessTracker\FitnessTracker\bin\Debug\Xamarin.Forms.Platform.pdb
+C:\FitnessTracker\FitnessTracker\FitnessTracker\bin\Debug\Xamarin.Forms.Xaml.pdb
+C:\FitnessTracker\FitnessTracker\FitnessTracker\bin\Debug\Xamarin.Forms.Xaml.xml
+C:\FitnessTracker\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.MainPage.xaml.g.cs
+C:\FitnessTracker\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.App.xaml.g.cs
+C:\FitnessTracker\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.Login.xaml.g.cs
+C:\FitnessTracker\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.SignUp.xaml.g.cs
+C:\FitnessTracker\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.SignUp2.xaml.g.cs
+C:\FitnessTracker\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.WallPage.xaml.g.cs
+C:\FitnessTracker\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.MenuPage.xaml.g.cs
+C:\FitnessTracker\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.NewPostPage.xaml.g.cs
+C:\FitnessTracker\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.AddNewWLActivity.xaml.g.cs
+C:\FitnessTracker\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.AddNewWorkout2.xaml.g.cs
+C:\FitnessTracker\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.PlayerProfilePage.xaml.g.cs
+C:\FitnessTracker\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.FollowPage.xaml.g.cs
+C:\FitnessTracker\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.dll
+C:\FitnessTracker\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.pdb
+C:\FitnessTracker\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.csprojResolveAssemblyReference.cache
+C:\radwaHard\FitnessTracker\FitnessTracker\FitnessTracker\bin\Debug\FitnessTracker.dll
+C:\radwaHard\FitnessTracker\FitnessTracker\FitnessTracker\bin\Debug\FitnessTracker.pdb
+C:\radwaHard\FitnessTracker\FitnessTracker\FitnessTracker\bin\Debug\Newtonsoft.Json.dll
+C:\radwaHard\FitnessTracker\FitnessTracker\FitnessTracker\bin\Debug\Xamarin.Forms.Core.dll
+C:\radwaHard\FitnessTracker\FitnessTracker\FitnessTracker\bin\Debug\Xamarin.Forms.Platform.dll
+C:\radwaHard\FitnessTracker\FitnessTracker\FitnessTracker\bin\Debug\Xamarin.Forms.Xaml.dll
+C:\radwaHard\FitnessTracker\FitnessTracker\FitnessTracker\bin\Debug\Newtonsoft.Json.xml
+C:\radwaHard\FitnessTracker\FitnessTracker\FitnessTracker\bin\Debug\Xamarin.Forms.Core.pdb
+C:\radwaHard\FitnessTracker\FitnessTracker\FitnessTracker\bin\Debug\Xamarin.Forms.Core.xml
+C:\radwaHard\FitnessTracker\FitnessTracker\FitnessTracker\bin\Debug\Xamarin.Forms.Platform.pdb
+C:\radwaHard\FitnessTracker\FitnessTracker\FitnessTracker\bin\Debug\Xamarin.Forms.Xaml.pdb
+C:\radwaHard\FitnessTracker\FitnessTracker\FitnessTracker\bin\Debug\Xamarin.Forms.Xaml.xml
+C:\radwaHard\FitnessTracker\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.csprojResolveAssemblyReference.cache
+C:\radwaHard\FitnessTracker\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.MainPage.xaml.g.cs
+C:\radwaHard\FitnessTracker\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.App.xaml.g.cs
+C:\radwaHard\FitnessTracker\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.Login.xaml.g.cs
+C:\radwaHard\FitnessTracker\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.SignUp.xaml.g.cs
+C:\radwaHard\FitnessTracker\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.SignUp2.xaml.g.cs
+C:\radwaHard\FitnessTracker\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.WallPage.xaml.g.cs
+C:\radwaHard\FitnessTracker\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.MenuPage.xaml.g.cs
+C:\radwaHard\FitnessTracker\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.NewPostPage.xaml.g.cs
+C:\radwaHard\FitnessTracker\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.AddNewWLActivity.xaml.g.cs
+C:\radwaHard\FitnessTracker\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.PlayerProfilePage.xaml.g.cs
+C:\radwaHard\FitnessTracker\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.FollowPage.xaml.g.cs
+C:\radwaHard\FitnessTracker\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.dll
+C:\radwaHard\FitnessTracker\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.pdb
+C:\radwaHard\FitnessTracker\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.ProfilePage.xaml.g.cs
+C:\Users\radwa\Documents\FitnessTracker\FitnessTracker\FitnessTracker\bin\Debug\FitnessTracker.dll
+C:\Users\radwa\Documents\FitnessTracker\FitnessTracker\FitnessTracker\bin\Debug\FitnessTracker.pdb
+C:\Users\radwa\Documents\FitnessTracker\FitnessTracker\FitnessTracker\bin\Debug\Newtonsoft.Json.dll
+C:\Users\radwa\Documents\FitnessTracker\FitnessTracker\FitnessTracker\bin\Debug\Xamarin.Forms.Core.dll
+C:\Users\radwa\Documents\FitnessTracker\FitnessTracker\FitnessTracker\bin\Debug\Xamarin.Forms.Platform.dll
+C:\Users\radwa\Documents\FitnessTracker\FitnessTracker\FitnessTracker\bin\Debug\Xamarin.Forms.Xaml.dll
+C:\Users\radwa\Documents\FitnessTracker\FitnessTracker\FitnessTracker\bin\Debug\Newtonsoft.Json.xml
+C:\Users\radwa\Documents\FitnessTracker\FitnessTracker\FitnessTracker\bin\Debug\Xamarin.Forms.Core.pdb
+C:\Users\radwa\Documents\FitnessTracker\FitnessTracker\FitnessTracker\bin\Debug\Xamarin.Forms.Core.xml
+C:\Users\radwa\Documents\FitnessTracker\FitnessTracker\FitnessTracker\bin\Debug\Xamarin.Forms.Platform.pdb
+C:\Users\radwa\Documents\FitnessTracker\FitnessTracker\FitnessTracker\bin\Debug\Xamarin.Forms.Xaml.pdb
+C:\Users\radwa\Documents\FitnessTracker\FitnessTracker\FitnessTracker\bin\Debug\Xamarin.Forms.Xaml.xml
+C:\Users\radwa\Documents\FitnessTracker\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.csprojResolveAssemblyReference.cache
+C:\Users\radwa\Documents\FitnessTracker\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.MainPage.xaml.g.cs
+C:\Users\radwa\Documents\FitnessTracker\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.App.xaml.g.cs
+C:\Users\radwa\Documents\FitnessTracker\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.Login.xaml.g.cs
+C:\Users\radwa\Documents\FitnessTracker\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.SignUp.xaml.g.cs
+C:\Users\radwa\Documents\FitnessTracker\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.SignUp2.xaml.g.cs
+C:\Users\radwa\Documents\FitnessTracker\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.WallPage.xaml.g.cs
+C:\Users\radwa\Documents\FitnessTracker\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.MenuPage.xaml.g.cs
+C:\Users\radwa\Documents\FitnessTracker\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.NewPostPage.xaml.g.cs
+C:\Users\radwa\Documents\FitnessTracker\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.AddNewWLActivity.xaml.g.cs
+C:\Users\radwa\Documents\FitnessTracker\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.PlayerProfilePage.xaml.g.cs
+C:\Users\radwa\Documents\FitnessTracker\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.FollowPage.xaml.g.cs
+C:\Users\radwa\Documents\FitnessTracker\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.ProfilePage.xaml.g.cs
+C:\Users\radwa\Documents\FitnessTracker\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.dll
+C:\Users\radwa\Documents\FitnessTracker\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.pdb
+C:\Users\radwa\Source\Repos\GYM\FitnessTracker\FitnessTracker\FitnessTracker\bin\Debug\FitnessTracker.dll
+C:\Users\radwa\Source\Repos\GYM\FitnessTracker\FitnessTracker\FitnessTracker\bin\Debug\FitnessTracker.pdb
+C:\Users\radwa\Source\Repos\GYM\FitnessTracker\FitnessTracker\FitnessTracker\bin\Debug\Newtonsoft.Json.dll
+C:\Users\radwa\Source\Repos\GYM\FitnessTracker\FitnessTracker\FitnessTracker\bin\Debug\Xamarin.Forms.Core.dll
+C:\Users\radwa\Source\Repos\GYM\FitnessTracker\FitnessTracker\FitnessTracker\bin\Debug\Xamarin.Forms.Platform.dll
+C:\Users\radwa\Source\Repos\GYM\FitnessTracker\FitnessTracker\FitnessTracker\bin\Debug\Xamarin.Forms.Xaml.dll
+C:\Users\radwa\Source\Repos\GYM\FitnessTracker\FitnessTracker\FitnessTracker\bin\Debug\Newtonsoft.Json.xml
+C:\Users\radwa\Source\Repos\GYM\FitnessTracker\FitnessTracker\FitnessTracker\bin\Debug\Xamarin.Forms.Core.pdb
+C:\Users\radwa\Source\Repos\GYM\FitnessTracker\FitnessTracker\FitnessTracker\bin\Debug\Xamarin.Forms.Core.xml
+C:\Users\radwa\Source\Repos\GYM\FitnessTracker\FitnessTracker\FitnessTracker\bin\Debug\Xamarin.Forms.Platform.pdb
+C:\Users\radwa\Source\Repos\GYM\FitnessTracker\FitnessTracker\FitnessTracker\bin\Debug\Xamarin.Forms.Xaml.pdb
+C:\Users\radwa\Source\Repos\GYM\FitnessTracker\FitnessTracker\FitnessTracker\bin\Debug\Xamarin.Forms.Xaml.xml
+C:\Users\radwa\Source\Repos\GYM\FitnessTracker\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.csprojResolveAssemblyReference.cache
+C:\Users\radwa\Source\Repos\GYM\FitnessTracker\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.MainPage.xaml.g.cs
+C:\Users\radwa\Source\Repos\GYM\FitnessTracker\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.App.xaml.g.cs
+C:\Users\radwa\Source\Repos\GYM\FitnessTracker\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.Login.xaml.g.cs
+C:\Users\radwa\Source\Repos\GYM\FitnessTracker\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.SignUp.xaml.g.cs
+C:\Users\radwa\Source\Repos\GYM\FitnessTracker\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.SignUp2.xaml.g.cs
+C:\Users\radwa\Source\Repos\GYM\FitnessTracker\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.WallPage.xaml.g.cs
+C:\Users\radwa\Source\Repos\GYM\FitnessTracker\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.MenuPage.xaml.g.cs
+C:\Users\radwa\Source\Repos\GYM\FitnessTracker\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.NewPostPage.xaml.g.cs
+C:\Users\radwa\Source\Repos\GYM\FitnessTracker\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.AddNewWLActivity.xaml.g.cs
+C:\Users\radwa\Source\Repos\GYM\FitnessTracker\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.PlayerProfilePage.xaml.g.cs
+C:\Users\radwa\Source\Repos\GYM\FitnessTracker\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.FollowPage.xaml.g.cs
+C:\Users\radwa\Source\Repos\GYM\FitnessTracker\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.ProfilePage.xaml.g.cs
+C:\Users\radwa\Source\Repos\GYM\FitnessTracker\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.dll
+C:\Users\radwa\Source\Repos\GYM\FitnessTracker\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.pdb
