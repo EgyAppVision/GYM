@@ -2777,11 +2777,11 @@ namespace FitnessTracker.Droid
 			// aapt resource value: 0x7f020116
 			public const int notification_icon_background = 2130837782;
 			
-			// aapt resource value: 0x7f020123
-			public const int notification_template_icon_bg = 2130837795;
-			
 			// aapt resource value: 0x7f020124
-			public const int notification_template_icon_low_bg = 2130837796;
+			public const int notification_template_icon_bg = 2130837796;
+			
+			// aapt resource value: 0x7f020125
+			public const int notification_template_icon_low_bg = 2130837797;
 			
 			// aapt resource value: 0x7f020117
 			public const int notification_tile_bg = 2130837783;
@@ -2790,34 +2790,37 @@ namespace FitnessTracker.Droid
 			public const int notify_panel_notification_icon_bg = 2130837784;
 			
 			// aapt resource value: 0x7f020119
-			public const int profile = 2130837785;
+			public const int PersonalTrainer = 2130837785;
 			
 			// aapt resource value: 0x7f02011a
-			public const int profileicon32 = 2130837786;
+			public const int profile = 2130837786;
 			
 			// aapt resource value: 0x7f02011b
-			public const int profileicon64 = 2130837787;
+			public const int profileicon32 = 2130837787;
 			
 			// aapt resource value: 0x7f02011c
-			public const int reminders = 2130837788;
+			public const int profileicon64 = 2130837788;
 			
 			// aapt resource value: 0x7f02011d
-			public const int runningIcon = 2130837789;
+			public const int reminders = 2130837789;
 			
 			// aapt resource value: 0x7f02011e
-			public const int searchIcon = 2130837790;
+			public const int runningIcon = 2130837790;
 			
 			// aapt resource value: 0x7f02011f
-			public const int stopwatch = 2130837791;
+			public const int searchIcon = 2130837791;
 			
 			// aapt resource value: 0x7f020120
-			public const int todo = 2130837792;
+			public const int stopwatch = 2130837792;
 			
 			// aapt resource value: 0x7f020121
-			public const int trainingImg1 = 2130837793;
+			public const int todo = 2130837793;
 			
 			// aapt resource value: 0x7f020122
-			public const int trainingImg2 = 2130837794;
+			public const int trainingImg1 = 2130837794;
+			
+			// aapt resource value: 0x7f020123
+			public const int trainingImg2 = 2130837795;
 			
 			static Drawable()
 			{

@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FitnessTracker.Sessions">
+    <ContentPage.Title>Sessions</ContentPage.Title>
+
+    <ContentPage.Content>
+        <Grid VerticalOptions="FillAndExpand" Padding="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3*"></RowDefinition>
+                <RowDefinition Height="4*"></RowDefinition>
+
+                <RowDefinition Height="3*"></RowDefinition>
+
+            </Grid.RowDefinitions>
+
+            <Frame   Grid.Row="1" VerticalOptions="Center"  Margin="20,0,20,0" CornerRadius="8" HasShadow="True" BackgroundColor="#EEEFF1" 
+       Padding="0">
+                <Grid    Padding="10">
+                    <Frame Grid.Row="0"  VerticalOptions="CenterAndExpand"  CornerRadius="4"  BackgroundColor="White" 
+       Padding="0">
+                        <Button  Text="Request Sessions"  x:Name="requestSessionBtn" Clicked="requestSessionBtn_Clicked"></Button>
+                    </Frame>
+                    <Frame Grid.Row="1" VerticalOptions="CenterAndExpand"  CornerRadius="4"  BackgroundColor="White" 
+       Padding="0">
+                        <Button  Text="Ordered Sessions" x:Name="orderedSessionBtn" Clicked="orderedSessionBtn_Clicked"></Button>
+                    </Frame>
+
+
+
+                </Grid>
+            </Frame>
+
+        </Grid>
+
+    </ContentPage.Content>
+</ContentPage>

@@ -323,8 +323,12 @@ namespace FitnessTracker
             string workoutStr = JsonConvert.SerializeObject(myWorkout);
 
            var res=    await addWorkoutRequest.callService("Workout/addworkout", workoutStr, "POST");
+            if(res.status == true)
+            {
+               await DisplayAlert("Published!", "Your work out has been published successfully", "Ok");
+            }
 
-
+            clearFields();
         }
 
         async void pickImage()
@@ -338,7 +342,22 @@ namespace FitnessTracker
             }
         }
 
+        void clearFields()
+        {
+            var childs = setsGrid.Children.ToList();
+            foreach (var child in childs)
+            {
+                if (Grid.GetRow(child) > 0)
+                {
+                    setsGrid.Children.Remove(child);
+                }
+              
+             
+            }
 
+            AddNewRow(1);
+
+        }
 
 
 

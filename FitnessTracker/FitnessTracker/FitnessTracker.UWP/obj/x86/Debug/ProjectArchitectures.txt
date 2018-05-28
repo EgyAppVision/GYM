@@ -1,2 +1,2 @@
-C:\FitnessTracker\FitnessTracker\FitnessTracker.UWP\FitnessTracker.UWP.csproj;x86
-C:\FitnessTracker\FitnessTracker\FitnessTracker\FitnessTracker.csproj;neutral
+C:\Users\radwa\Source\Repos\GYM\FitnessTracker\FitnessTracker\FitnessTracker.UWP\FitnessTracker.UWP.csproj;x86
+C:\Users\radwa\Source\Repos\GYM\FitnessTracker\FitnessTracker\FitnessTracker\FitnessTracker.csproj;neutral

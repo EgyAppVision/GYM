@@ -128,7 +128,11 @@ namespace FitnessTracker
             string workoutStr = JsonConvert.SerializeObject(myWorkout);
 
            var response =   await addWorkoutRequest.callService("Workout/addworkout", workoutStr, "POST");
-
+            if(response.status == true)
+            {
+                await DisplayAlert("Published!", "Your work out has been published successfully", "Ok");
+                clearFields();
+            }
         }
 
 
@@ -228,8 +232,28 @@ namespace FitnessTracker
         {
             SendWorkoutRequest();
         }
+
+
+
+        void clearFields()
+        {
+            var childs = setsGrid.Children.ToList();
+            foreach (var child in childs)
+            {
+                if (Grid.GetRow(child) > 0)
+                {
+                    setsGrid.Children.Remove(child);
+                }
+
+
+            }
+
+            AddNewRow(1);
+
+        }
+
     }
 
 
-   
+
 }

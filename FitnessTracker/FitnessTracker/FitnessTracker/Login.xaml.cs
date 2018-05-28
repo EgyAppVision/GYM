@@ -31,7 +31,7 @@ namespace FitnessTracker
 
             Request request = new Request();
 
-            string bodyRequest = "{\"userName\":\"" + useremail + "\",\"password\":\"" + password + "\"}";
+            string bodyRequest = "{\"userEmail\":\"" + useremail + "\",\"password\":\"" + password + "\"}";
 
 
 

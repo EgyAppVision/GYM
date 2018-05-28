@@ -47,10 +47,26 @@ namespace FitnessTracker
                 });
                 masterPageItems.Add(new MasterPageItem
                 {
-                    Title = "LogOut",
-                    IconSource = "logout.png",
-                    TargetType = typeof(LogOutCS)
+                    Title = "Find a Trainer",
+                    IconSource = "people.png",
+                    TargetType = typeof(PlayerRequestSession)
                 });
+
+            masterPageItems.Add(new MasterPageItem
+            {
+                Title = "Manage your sessions",
+                IconSource = "listIcon.png",
+                TargetType = typeof(PlayerSessionList)
+            });
+
+
+            masterPageItems.Add(new MasterPageItem
+            {
+                Title = "LogOut",
+                IconSource = "logout.png",
+                TargetType = typeof(LogOutCS)
+            });
+
 
             listView = new ListView
             {

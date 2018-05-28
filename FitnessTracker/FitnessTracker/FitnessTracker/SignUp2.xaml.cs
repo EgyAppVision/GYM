@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -39,8 +40,9 @@ namespace FitnessTracker
 
 
 
-            if (!string.IsNullOrWhiteSpace(weightEntry.Text) && !string.IsNullOrWhiteSpace(heightEntry.Text)  && !string.IsNullOrWhiteSpace(fatperEntry.Text))
+            if (!string.IsNullOrWhiteSpace(weightEntry.Text) && !string.IsNullOrWhiteSpace(heightEntry.Text) && !string.IsNullOrWhiteSpace(fatperEntry.Text))
             {
+                if (weightEntry.Text.Length <= 1 || weightEntry.Text.Length >= 4 || heightEntry.Text.Length <=2 ||heightEntry.Text.Length >= 4)
                 validationMsgLb.Text = "";
                 try
                 {

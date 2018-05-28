@@ -68,18 +68,32 @@
     <Compile Include="PlayerProfilePage.xaml.cs">
       <DependentUpon>PlayerProfilePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PlayerRequestSession.xaml.cs">
+      <DependentUpon>PlayerRequestSession.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PlayerSessionList.xaml.cs">
+      <DependentUpon>PlayerSessionList.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ProfilePage.xaml.cs">
       <DependentUpon>ProfilePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Request.cs" />
+    <Compile Include="RequestTrainerForm.xaml.cs">
+      <DependentUpon>RequestTrainerForm.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Response.cs" />
+    <Compile Include="Sessions.xaml.cs">
+      <DependentUpon>Sessions.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SignUp.xaml.cs">
       <DependentUpon>SignUp.xaml</DependentUpon>
     </Compile>
     <Compile Include="SignUp2.xaml.cs">
       <DependentUpon>SignUp2.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SignUpValidation.cs" />
+    <Compile Include="Trainer\Trainer.cs" />
     <Compile Include="WallPage.xaml.cs">
       <DependentUpon>WallPage.xaml</DependentUpon>
     </Compile>
@@ -149,6 +163,7 @@
     <Content Include="FitnessLogo.png" />
     <Content Include="hamburger.png" />
     <Content Include="ImageIcon.png" />
+    <Content Include="PersonalTrainer.jpg" />
     <Content Include="profile.jpg" />
     <AndroidResource Include="profileicon64.png" />
     <Content Include="reminders.png" />
@@ -172,7 +187,6 @@
   <ItemGroup>
     <Folder Include="GymOwner\" />
     <Folder Include="Player\" />
-    <Folder Include="Trainer\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="AddNewWLActivity.xaml">
@@ -194,6 +208,30 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="ProfilePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Sessions.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="PlayerSessionList.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="PlayerRequestSession.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="RequestTrainerForm.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

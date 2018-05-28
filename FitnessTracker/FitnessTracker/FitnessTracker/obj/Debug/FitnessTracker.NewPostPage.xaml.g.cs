@@ -11,7 +11,8 @@
 namespace FitnessTracker {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("C:\\radwaHard\\FitnessTracker\\FitnessTracker\\FitnessTracker\\NewPostPage.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("C:\\Users\\radwa\\Source\\Repos\\GYM\\FitnessTracker\\FitnessTracker\\FitnessTracker\\NewP" +
+        "ostPage.xaml")]
     public partial class NewPostPage : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]

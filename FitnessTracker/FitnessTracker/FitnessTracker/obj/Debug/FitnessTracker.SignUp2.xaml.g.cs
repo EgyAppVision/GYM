@@ -11,7 +11,8 @@
 namespace FitnessTracker {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("C:\\FitnessTracker\\FitnessTracker\\FitnessTracker\\SignUp2.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("C:\\Users\\radwa\\Source\\Repos\\GYM\\FitnessTracker\\FitnessTracker\\FitnessTracker\\Sign" +
+        "Up2.xaml")]
     public partial class SignUp2 : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
