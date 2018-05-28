@@ -1,34 +1,55 @@
 package com.appvision.gym.model;
 
+import com.appvision.gym.defines.Defines;
 import java.io.Serializable;
 import java.util.Date;
-//import javax.validation.constraints.NotNull;
-import org.hibernate.validator.NotNull;
-public class User implements Serializable{
-/**
-	 * 
-	 */
-private static final long serialVersionUID = 1448793414629205821L;
-private int userId;
-@NotNull (message = "null value")
-private String firstName;
-@NotNull (message = "null value")
-private String userName;
-private  String password;
-private String lastName;
-private int gender;
-private  String mobile;
-private String email;
-private int activity;  
-private String place ;
-private Date birthDate;
-private int weight;
-private  int height;
-private int fatPercentage;
-private int preferedActivity;
-private int preferedPlace;
-private  int type;
-private int isFollowing ;
+//import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.DecimalMin;
+import javax.validation.constraints.Digits;
+import javax.validation.constraints.Pattern;
+import org.springframework.format.annotation.DateTimeFormat;
+
+public class User implements Serializable {
+
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1448793414629205821L;
+    private int userId;
+//@NotNull (message = "null value")
+    @NotNull(message = "First name Can't be Null ")
+    private String firstName;
+//@NotBlank (message = "null value")
+    //private String userName;
+    @NotNull(message = "password name Can't be Null ")
+    private String password;
+    @NotNull(message = "lastName name Can't be Null ")
+    private String lastName;
+    @NotNull
+    @DecimalMin(message = "Wrong Gender ", value = "1")
+    private int gender;
+    @NotNull
+    @Pattern(regexp = Defines.mobilePattern, message = "Wrong Mobile number")
+    private String mobile;
+    @NotNull
+    @Pattern(regexp = Defines.mailPattern, message = "Wrong email")
+    private String email;
+   
+    @NotNull
+    private Date birthDate;
+    @NotNull
+    private int weight;
+    private int height;
+    private int fatPercentage;
+    @DecimalMin(message = "Wrong preferedActivity ", value = "1")
+    private int preferedActivity;
+    @DecimalMin(message = "Wrong preferedActivity ", value = "1")
+    private int preferedPlace;
+    @DecimalMin(message = "Wrong type ", value = "1")
+    private int type;
+    private int isFollowing;
+
     public int getUserId() {
         return userId;
     }
@@ -45,13 +66,6 @@ private int isFollowing ;
         this.firstName = firstName;
     }
 
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
 
     public String getPassword() {
         return password;
@@ -75,9 +89,8 @@ private int isFollowing ;
 
     public void setGender(int gender) {
         this.gender = gender;
-    }
+    };
 
-    
     public String getMobile() {
         return mobile;
     }
@@ -93,23 +106,6 @@ private int isFollowing ;
     public void setEmail(String email) {
         this.email = email;
     }
-
-    public int getActivity() {
-        return activity;
-    }
-
-    public void setActivity(int activity) {
-        this.activity = activity;
-    }
-
-    public String getPlace() {
-        return place;
-    }
-
-    public void setPlace(String place) {
-        this.place = place;
-    }
-
     public Date getBirthDate() {
         return birthDate;
     }
@@ -173,5 +169,12 @@ private int isFollowing ;
     public void setIsFollowing(int isFollowing) {
         this.isFollowing = isFollowing;
     }
+
+    @Override
+    public String toString() {
+        return "User{" + "userId=" + userId + ", firstName=" + firstName + ", password=" + password + ", lastName=" + lastName + ", gender=" + gender + ", mobile=" + mobile + ", email=" + email + ", birthDate=" + birthDate + ", weight=" + weight + ", height=" + height + ", fatPercentage=" + fatPercentage + ", preferedActivity=" + preferedActivity + ", preferedPlace=" + preferedPlace + ", type=" + type + ", isFollowing=" + isFollowing + '}';
+    }
+
+    
 
 }

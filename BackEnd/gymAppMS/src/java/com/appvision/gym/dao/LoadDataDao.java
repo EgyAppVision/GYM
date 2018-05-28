@@ -17,17 +17,17 @@ import java.util.List;
  */
 public interface LoadDataDao {
 
-    public List<LookupModel> loadUserGender();
+    public List<LookupModel> loadUserGender() throws Exception;
 
-    public List<LookupModel> loadUserPrefaredPlace();
+    public List<LookupModel> loadUserPrefaredPlace() throws Exception;
 
-    public List<LookupModel> loadUserPrefaredActivity();
+    public List<LookupModel> loadUserPrefaredActivity() throws Exception ;
 
-    public List<LookupModel> loadUserType();
+    public List<LookupModel> loadUserType() throws Exception;
 
-    public List<Muscle> loadMainMuscles();
+    public List<Muscle> loadMainMuscles() throws Exception;
 
-    public List<Muscle> LoadSubMuscles(int mainMuscle);
+    public List<Muscle> LoadSubMuscles(int mainMuscle) throws Exception;
     
-    public List<Exercise> LoadMuscleExceriseByMainMuscleId(int mainMuscleId);
+    public List<Exercise> LoadMuscleExceriseByMainMuscleId(int mainMuscleId)throws Exception;
 }

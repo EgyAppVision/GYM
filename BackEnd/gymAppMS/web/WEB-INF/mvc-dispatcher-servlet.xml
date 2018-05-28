@@ -32,9 +32,9 @@ xmlns:tx="http://www.springframework.org/schema/tx"
         <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
 		destroy-method="close">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
-		  <property name="url" value="jdbc:mysql://localhost:3306/gym"/>
+		  <property name="url" value="jdbc:mysql://66.23.230.93:3306/gym"/>
       <property name="username" value="root"/>
-      <property name="password" value=""/>
+       <property name="password" value="mohamed1985"/>
 		<property name="initialSize" value="10" />
 		<property name="maxActive" value="20" />
 		<property name="maxIdle" value="5" />
@@ -52,5 +52,10 @@ xmlns:tx="http://www.springframework.org/schema/tx"
 		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 		<property name="dataSource" ref="dataSource" />
 	</bean>
+        
+        <bean class="org.springframework.context.support.ResourceBundleMessageSource"
+      id="messageSource">
+    <property name="basename" value="messages" />
+</bean>
 </beans>  
 

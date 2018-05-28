@@ -12,6 +12,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -27,9 +28,10 @@ public class LoadDataDaoImp implements LoadDataDao {
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
-
+  private Logger debuglog = Logger.getLogger("debuglog");
     @Override
-    public List<LookupModel> loadUserGender() {
+    public List<LookupModel> loadUserGender() throws Exception {
+        try{
         return jdbcTemplate.query("select * from user_gender", new ResultSetExtractor<List<LookupModel>>() {
             @Override
             public List<LookupModel> extractData(ResultSet rs) throws SQLException,
@@ -46,10 +48,16 @@ public class LoadDataDaoImp implements LoadDataDao {
                 return list;
             }
         });
+        }catch(Exception ex)
+        {
+            debuglog.debug("an Error has occured " + ex.getMessage(),ex);
+            throw ex;
+        }
     }
 
     @Override
-    public List<LookupModel> loadUserPrefaredPlace() {
+    public List<LookupModel> loadUserPrefaredPlace() throws Exception {
+        try{
         return jdbcTemplate.query("select * from prefered_place", new ResultSetExtractor<List<LookupModel>>() {
             @Override
             public List<LookupModel> extractData(ResultSet rs) throws SQLException,
@@ -66,10 +74,17 @@ public class LoadDataDaoImp implements LoadDataDao {
                 return list;
             }
         });
+        
+        }catch(Exception ex)
+        {
+            debuglog.debug("an Error has occured " + ex.getMessage(),ex);
+            throw ex;
+        }
     }
 
     @Override
-    public List<LookupModel> loadUserPrefaredActivity() {
+    public List<LookupModel> loadUserPrefaredActivity() throws Exception {
+       try{
         return jdbcTemplate.query("select * from prefered_activity", new ResultSetExtractor<List<LookupModel>>() {
             @Override
             public List<LookupModel> extractData(ResultSet rs) throws SQLException,
@@ -86,10 +101,16 @@ public class LoadDataDaoImp implements LoadDataDao {
                 return list;
             }
         });
+        }catch(Exception ex)
+        {
+            debuglog.debug("an Error has occured " + ex.getMessage(),ex);
+            throw ex;
+        }
     }
 
     @Override
-    public List<LookupModel> loadUserType() {
+    public List<LookupModel> loadUserType() throws Exception {
+       try {
         return jdbcTemplate.query("select * from user_type", new ResultSetExtractor<List<LookupModel>>() {
             @Override
             public List<LookupModel> extractData(ResultSet rs) throws SQLException,
@@ -106,11 +127,17 @@ public class LoadDataDaoImp implements LoadDataDao {
                 return list;
             }
         });
+        }catch(Exception ex)
+        {
+            debuglog.debug("an Error has occured " + ex.getMessage(),ex);
+            throw ex;
+        }
     }
 
     @Override
-    public List<Muscle> loadMainMuscles() {
-        return jdbcTemplate.query("select * from muscle inner join muscle_type on muscle.muscle_type_id =muscle_type.muscle_type_id where  muscle_id not in (select sub_muscle_id from muscle_relation)", new ResultSetExtractor<List<Muscle>>() {
+    public List<Muscle> loadMainMuscles() throws Exception {
+        try{
+            return jdbcTemplate.query("select * from muscle inner join muscle_type on muscle.muscle_type_id =muscle_type.muscle_type_id where  muscle_id not in (select sub_muscle_id from muscle_relation)", new ResultSetExtractor<List<Muscle>>() {
             @Override
             public List<Muscle> extractData(ResultSet rs) throws SQLException,
                     DataAccessException {
@@ -128,9 +155,15 @@ public class LoadDataDaoImp implements LoadDataDao {
                 return list;
             }
         });
+        }catch(Exception ex)
+        {
+            debuglog.debug("an Error has occured " + ex.getMessage(),ex);
+            throw ex;
+        }
     }
 
-    public List<Muscle> LoadSubMuscles(int mainMuscle) {
+    public List<Muscle> LoadSubMuscles(int mainMuscle) throws Exception {
+        try{
         String sql = "select * from muscle inner join muscle_relation on sub_muscle_id = muscle_id inner join muscle_type on muscle.muscle_type_id =muscle_type.muscle_type_id where main_muscle_id = " + mainMuscle;
         return jdbcTemplate.query(sql, new ResultSetExtractor<List<Muscle>>() {
             @Override
@@ -150,15 +183,22 @@ public class LoadDataDaoImp implements LoadDataDao {
                 return list;
             }
         });
+        
+        }catch(Exception ex)
+        {
+            debuglog.debug("an Error has occured " + ex.getMessage(),ex);
+            throw ex;
+        }
     }
 
-    public List<Exercise> LoadMuscleExceriseByMainMuscleId(int mainMuscleId) {
+    public List<Exercise> LoadMuscleExceriseByMainMuscleId(int mainMuscleId) throws Exception {
+        try{
         String sql = "select * from exercise inner join \n"
                 + "exercise_type on exercise.exercise_type_id = exercise_type.exercise_type_id\n"
                 + "inner join muscle on muscle.muscle_id = exercise.exercise_sub_muscle\n"
                 + "inner join muscle_type on muscle.muscle_type_id = muscle_type.muscle_type_id\n"
                 + "inner join muscle_relation on muscle_relation.sub_muscle_id = muscle.muscle_id\n"
-                + "where muscle_relation.main_muscle_id = 8";
+                + "where muscle_relation.main_muscle_id = " + mainMuscleId;
         return jdbcTemplate.query(sql, new ResultSetExtractor<List<Exercise>>() {
             @Override
             public List<Exercise> extractData(ResultSet rs) throws SQLException,
@@ -181,5 +221,11 @@ public class LoadDataDaoImp implements LoadDataDao {
                 return list;
             }
         });
+        
+        }catch(Exception ex)
+        {
+            debuglog.debug("an Error has occured " + ex.getMessage(),ex);
+            throw ex;
+        }
     }
 }

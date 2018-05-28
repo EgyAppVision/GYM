@@ -22,7 +22,7 @@ public class WorkoutServiceImp implements WorkoutService{
 WorkoutDao workoutDao;
     @Override
     @Transactional
-    public boolean AddWorkOut(Workout workout) {
+    public boolean AddWorkOut(Workout workout) throws Exception {
        return workoutDao.AddWorkOut(workout);
     }
     
