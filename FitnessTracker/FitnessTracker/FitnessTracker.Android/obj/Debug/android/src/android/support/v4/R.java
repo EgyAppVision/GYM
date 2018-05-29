@@ -3020,20 +3020,21 @@ containing a value of this type.
         public static int notification_bg_normal=0x7f020114;
         public static int notification_bg_normal_pressed=0x7f020115;
         public static int notification_icon_background=0x7f020116;
-        public static int notification_template_icon_bg=0x7f020123;
-        public static int notification_template_icon_low_bg=0x7f020124;
+        public static int notification_template_icon_bg=0x7f020124;
+        public static int notification_template_icon_low_bg=0x7f020125;
         public static int notification_tile_bg=0x7f020117;
         public static int notify_panel_notification_icon_bg=0x7f020118;
-        public static int profile=0x7f020119;
-        public static int profileicon32=0x7f02011a;
-        public static int profileicon64=0x7f02011b;
-        public static int reminders=0x7f02011c;
-        public static int runningicon=0x7f02011d;
-        public static int searchicon=0x7f02011e;
-        public static int stopwatch=0x7f02011f;
-        public static int todo=0x7f020120;
-        public static int trainingimg1=0x7f020121;
-        public static int trainingimg2=0x7f020122;
+        public static int personaltrainer=0x7f020119;
+        public static int profile=0x7f02011a;
+        public static int profileicon32=0x7f02011b;
+        public static int profileicon64=0x7f02011c;
+        public static int reminders=0x7f02011d;
+        public static int runningicon=0x7f02011e;
+        public static int searchicon=0x7f02011f;
+        public static int stopwatch=0x7f020120;
+        public static int todo=0x7f020121;
+        public static int trainingimg1=0x7f020122;
+        public static int trainingimg2=0x7f020123;
     }
     public static final class id {
         public static int action0=0x7f08009c;

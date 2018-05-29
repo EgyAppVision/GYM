@@ -20,7 +20,8 @@ namespace FitnessTracker
         public SignUp2( Player player , List< UserPrefaredActivity> userActivityList)
         {
             InitializeComponent();
-       
+            DateTime dt = new DateTime(01/05/1980);
+            DOPPicker.Date = dt;
             player_signUp2 = new Player();
             player_signUp2 = player;
             activityList = new List<UserPrefaredActivity>();

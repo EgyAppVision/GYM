@@ -93,6 +93,9 @@
       <DependentUpon>SignUp2.xaml</DependentUpon>
     </Compile>
     <Compile Include="SignUpValidation.cs" />
+    <Compile Include="TrainerProfileView.xaml.cs">
+      <DependentUpon>TrainerProfileView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Trainer\Trainer.cs" />
     <Compile Include="WallPage.xaml.cs">
       <DependentUpon>WallPage.xaml</DependentUpon>
@@ -232,6 +235,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="RequestTrainerForm.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TrainerProfileView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

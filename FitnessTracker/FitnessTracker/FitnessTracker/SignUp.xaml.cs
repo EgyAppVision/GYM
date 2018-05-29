@@ -102,6 +102,7 @@ namespace FitnessTracker
 
                 SignUpValidation checkValidationObj = new SignUpValidation();
                 checkValidationObj = SignUpValidation.CheckPage1Validation(player);
+                System.Diagnostics.Debug.WriteLine("validation : " + player.firstName + " ," + player.lastName + " ," + player.mobile + " ," + player.password + " , " + player.email );
                 if (SignUpValidation.isNotValid == true)
                 {
                     validationMsgLb.Text = "Please Enter Valid info";

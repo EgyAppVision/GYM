@@ -52,7 +52,7 @@ namespace FitnessTracker
                 isNotValid = true;
             }
 
-            if (playerObj.email.Length < 2)
+            if (playerObj.email.Length > 2)
             {
                 emailVal = Regex.IsMatch(playerObj.email, MatchEmailPattern) == true ? false : true;
                 isNotValid = emailVal == true?  true : false ;
@@ -66,16 +66,33 @@ namespace FitnessTracker
             }
 
 
+            if (playerObj.mobile.Length <= 10 || playerObj.mobile.Length >= 15 || IsDigitsOnly(playerObj.mobile) == false)
 
-                mobileVal = Regex.IsMatch(playerObj.mobile,matchMobilePattern ) == true ? false : true;
+            
+                mobileVal = false;
+                //    mobileVal = Regex.IsMatch(playerObj.mobile,matchMobilePattern ) == true ? false : true;
                 isNotValid = mobileVal == true ? true : false;
 
-
-            passwordVal = Regex.IsMatch(playerObj.password, matchpasswordPattern) == true ? false : true;
+            if (playerObj.password.Length <= 7)
+                passwordVal = false;
+            //passwordVal = Regex.IsMatch(playerObj.password, matchpasswordPattern) == true ? false : true;
             isNotValid = passwordVal == true ? true : false;
 
             return validationObj;
 
+        }
+
+
+
+       static bool  IsDigitsOnly(string str)
+        {
+            foreach (char c in str)
+            {
+                if (c < '0' || c > '9')
+                    return false;
+            }
+
+            return true;
         }
     }
 }

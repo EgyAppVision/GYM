@@ -155,3 +155,9 @@ C:\Users\radwa\Source\Repos\GYM\FitnessTracker\FitnessTracker\FitnessTracker\obj
 C:\Users\radwa\Source\Repos\GYM\FitnessTracker\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.PlayerSessionList.xaml.g.cs
 C:\Users\radwa\Source\Repos\GYM\FitnessTracker\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.PlayerRequestSession.xaml.g.cs
 C:\Users\radwa\Source\Repos\GYM\FitnessTracker\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.RequestTrainerForm.xaml.g.cs
+C:\Users\radwa\Desktop\FitnessTracker\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.csprojResolveAssemblyReference.cache
+C:\Users\radwa\Desktop\FitnessTracker\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.PlayerSessionList.xaml.g.cs
+C:\Users\radwa\Desktop\FitnessTracker\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.PlayerRequestSession.xaml.g.cs
+C:\Users\radwa\Desktop\FitnessTracker\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.RequestTrainerForm.xaml.g.cs
+C:\Users\radwa\Desktop\FitnessTracker\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.TrainerProfileView.xaml.g.cs
+C:\Users\radwa\Source\Repos\GYM\FitnessTracker\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.TrainerProfileView.xaml.g.cs

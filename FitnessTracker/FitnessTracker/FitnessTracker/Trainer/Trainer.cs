@@ -12,8 +12,8 @@ namespace FitnessTracker.Trainer
        public string name { get; set; }
         public string email { get; set; }
         public string phone { get; set; }
-        public string place { get; set; }
-        public string activity { get; set; }
+        public int place { get; set; }
+        public int activity { get; set; }
 
     }
 }

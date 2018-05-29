@@ -130,8 +130,25 @@ namespace FitnessTracker
            var response =   await addWorkoutRequest.callService("Workout/addworkout", workoutStr, "POST");
             if(response.status == true)
             {
+                if(response.content == "STATUS:-3")
+                {
+                    await DisplayAlert("Error!", "Server Error has occured please try again later!", "Ok");
+                    return;
+                }
+
+                else if (response.content == "STATUS:-1")
+                {
+                    await DisplayAlert("Error!", " Invalid Parameters Please enter valid info", "Ok");
+                    return;
+                }
+
                 await DisplayAlert("Published!", "Your work out has been published successfully", "Ok");
                 clearFields();
+            }
+
+            else
+            {
+                await DisplayAlert("Error", "Network Error!", "Ok");
             }
         }
 
@@ -238,6 +255,8 @@ namespace FitnessTracker
         void clearFields()
         {
             var childs = setsGrid.Children.ToList();
+            workoutNoteTxt.Text = "";
+
             foreach (var child in childs)
             {
                 if (Grid.GetRow(child) > 0)

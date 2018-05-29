@@ -36,8 +36,23 @@ namespace FitnessTracker
 
 
             var loginResponse = await request.callService("userServices/login", bodyRequest, "POST");
+            System.Diagnostics.Debug.WriteLine("OnLoginButtonClicked , "+loginResponse.content );
+
             if (loginResponse.status == true)
             {
+                if(loginResponse.content == "STATUS:-1")
+                {
+                  validationMsgLb.Text = "Invalid user name/ Password";
+                    return;
+                }
+
+                else if (loginResponse.content == "STATUS:-3")
+                {
+                  await DisplayAlert("Error!", "Server Error has occured please try again later!", "Ok");
+                  return;
+                }
+
+
                 var userStr = loginResponse.content;
                 Player player = new Player();
                 player = JsonConvert.DeserializeObject<Player>(userStr);
@@ -46,7 +61,9 @@ namespace FitnessTracker
                 {
                     if (Application.Current.Properties.ContainsKey("user"))
                     {
-                        Application.Current.Properties["user"] = null;
+                        System.Diagnostics.Debug.WriteLine("if (Application.Current.Properties.ContainsKey(user) ");
+
+                        // Application.Current.Properties["user"] = null;
                         Application.Current.Properties["user"] = userStr;
 
 
@@ -54,6 +71,8 @@ namespace FitnessTracker
 
                     else
                     {
+                        System.Diagnostics.Debug.WriteLine("Application.Current.Properties.Add(user, " +  userStr);
+
                         Application.Current.Properties.Add("user", userStr);
 
                     }
@@ -74,7 +93,6 @@ namespace FitnessTracker
 
 
 
-          //  await Navigation.PushAsync(new MainPageCS());   //to be deleted
 
         }
     }

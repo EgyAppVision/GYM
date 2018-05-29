@@ -24,9 +24,9 @@ namespace FitnessTracker
             InitializeComponent();
             GetSignUpData();
             resultList = new List<Trainer.Trainer>();
-            //currentUser = new Player();
-            //string userStr = Application.Current.Properties["user"] as string; // from device memory
-            //currentUser = JsonConvert.DeserializeObject<Player>(userStr);
+            currentUser = new Player();
+            string userStr = Application.Current.Properties["user"] as string; // from device memory
+            currentUser = JsonConvert.DeserializeObject<Player>(userStr);
 
             PlacePicker.Items.Add("Any");
             PlacePicker.SelectedIndex = 0;
@@ -43,7 +43,10 @@ namespace FitnessTracker
 
 
 
-
+        protected override bool OnBackButtonPressed()
+        {
+            return true;
+        }
 
 
         private async void SearchButton_clicked(object sender, EventArgs e)
@@ -59,7 +62,7 @@ namespace FitnessTracker
 
                 Request searchRequest = new Request();
                 ShowResult();
-                //    var response = await   searchRequest.callService("GetAllUsersByname?name= " + name + "&userId=" + 1 +
+                //   var response = await   searchRequest.callService("GetAllUsersByname?name= " + name + "&userId=" + 1 +
                 //        "&place=" + placeId + "&activity=" + activityId, null, "GET");
 
                 //    resultList = new List<Player>();
@@ -84,23 +87,23 @@ namespace FitnessTracker
             }
             Trainer.Trainer result = new Trainer.Trainer();
             result.name = "Aly Mazhar";
-            result.activity = "All";
+            result.activity = 3;
             result.phone = "01234567899";
-            result.place = "Balance Gym";
+            result.place = 2;
             resultList.Add(result);
 
             Trainer.Trainer result2 = new Trainer.Trainer();
             result2.name = "Radwa Alaa";
-            result2.activity = "Zomba";
+            result2.activity = 2;
             result2.phone = "01234567899";
-            result2.place = "Gold's Gym";
+            result2.place = 4;
             resultList.Add(result2);
  
             Trainer.Trainer result3 = new Trainer.Trainer();
             result3.name = "Ramadan Sobhy";
-            result3.activity = "All";
+            result3.activity = 1;
             result3.phone = "01234567899";
-            result3.place = "Balance Gym";
+            result3.place = 3;
 
             resultList.Add(result3);
 
@@ -124,12 +127,17 @@ namespace FitnessTracker
             //    {
             //        resultList = new List<Trainer.Trainer>();
             //        resultList = JsonConvert.DeserializeObject<List<Trainer.Trainer>>(content);
+            string placrStr ="";
+            string activityStr ="";
 
             for (int i = 0; i < resultList.Count(); i++)
                    {
                        var pl = resultList[i];
                 System.Diagnostics.Debug.WriteLine("row is :" + i);
-                CreatStack(pl.name, pl.phone, pl.place, pl.activity, i);
+                placrStr = placesList.Find(v => v.id == pl.place).value;
+                activityStr = activitiesList.Find(a => a.id == pl.activity).value;
+
+                CreatStack(pl.name, pl.phone, placrStr, activityStr, i);
                     }
                // }
           //  }
@@ -183,7 +191,7 @@ namespace FitnessTracker
             System.Diagnostics.Debug.WriteLine("followBtn_Clicked , row is :" + rowNo);
 
             await DisplayAlert("row number", selected.name + " in  " + rowNo, "ok");
-            await Navigation.PushAsync(new RequestTrainerForm(selected));
+            await Navigation.PushAsync(new TrainerProfileView(selected));
 
             //var followResponse = await followRequest.callService("userServices/follow?following=" + selected.id + "&follower=" + currentUser.userId, "", "GET");
             //if (followResponse.status == true)
@@ -247,14 +255,14 @@ namespace FitnessTracker
 
             var fs = new FormattedString();
             fs.Spans.Add(new Span { Text = "Location : ", FontAttributes = FontAttributes.Bold });
-            fs.Spans.Add(new Span { Text = phone});
+            fs.Spans.Add(new Span { Text = place});
             p.FormattedText = fs;
 
 
 
             var fs2 = new FormattedString();
             fs2.Spans.Add(new Span { Text = "Activity : ", FontAttributes = FontAttributes.Bold });
-            fs2.Spans.Add(new Span { Text = phone });
+            fs2.Spans.Add(new Span { Text = activity });
             a.FormattedText = fs2;
 
 
