@@ -39,6 +39,9 @@ namespace FitnessTracker
                     IconSource = "contacts.png",
                     TargetType = typeof(ProfilePage)
                 });
+
+            if (user.type == 1)
+            {
                 masterPageItems.Add(new MasterPageItem
                 {
                     Title = "Find Friends",
@@ -52,12 +55,35 @@ namespace FitnessTracker
                     TargetType = typeof(PlayerRequestSession)
                 });
 
-            masterPageItems.Add(new MasterPageItem
+                masterPageItems.Add(new MasterPageItem
+                {
+                    Title = "Manage your sessions",
+                    IconSource = "listIcon.png",
+                    TargetType = typeof(PlayerSessionList)
+                });
+
+
+            }
+
+            //for tariner
+            if (user.type == 2 )
             {
-                Title = "Manage your sessions",
-                IconSource = "listIcon.png",
-                TargetType = typeof(PlayerSessionList)
-            });
+                masterPageItems.Add(new MasterPageItem
+                {
+                    Title = "Pending Requests",
+                    IconSource = "friendRequest.png",
+                    TargetType = typeof(Trainer.TrainerSessionsRequests)
+                });
+
+
+                masterPageItems.Add(new MasterPageItem
+                {
+                    Title = "My running sessions",
+                    IconSource = "gymIcon.png",
+                    TargetType = typeof(Trainer.TrainerCurrentSessions)
+                });
+
+            }
 
 
             masterPageItems.Add(new MasterPageItem

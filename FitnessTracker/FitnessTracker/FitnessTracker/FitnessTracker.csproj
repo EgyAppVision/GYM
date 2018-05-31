@@ -96,7 +96,17 @@
     <Compile Include="TrainerProfileView.xaml.cs">
       <DependentUpon>TrainerProfileView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Trainer\RequestForm.xaml.cs">
+      <DependentUpon>RequestForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Trainer\SessionsRequest.cs" />
     <Compile Include="Trainer\Trainer.cs" />
+    <Compile Include="Trainer\TrainerCurrentSessions.xaml.cs">
+      <DependentUpon>TrainerCurrentSessions.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Trainer\TrainerSessionsRequests.xaml.cs">
+      <DependentUpon>TrainerSessionsRequests.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WallPage.xaml.cs">
       <DependentUpon>WallPage.xaml</DependentUpon>
     </Compile>
@@ -241,6 +251,24 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="TrainerProfileView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Trainer\TrainerSessionsRequests.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Trainer\TrainerCurrentSessions.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Trainer\RequestForm.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

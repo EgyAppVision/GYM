@@ -161,3 +161,6 @@ C:\Users\radwa\Desktop\FitnessTracker\FitnessTracker\FitnessTracker\obj\Debug\Fi
 C:\Users\radwa\Desktop\FitnessTracker\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.RequestTrainerForm.xaml.g.cs
 C:\Users\radwa\Desktop\FitnessTracker\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.TrainerProfileView.xaml.g.cs
 C:\Users\radwa\Source\Repos\GYM\FitnessTracker\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.TrainerProfileView.xaml.g.cs
+C:\Users\radwa\Desktop\FitnessTracker\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.Trainer.TrainerSessionsRequests.xaml.g.cs
+C:\Users\radwa\Desktop\FitnessTracker\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.Trainer.TrainerCurrentSessions.xaml.g.cs
+C:\Users\radwa\Desktop\FitnessTracker\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.Trainer.RequestForm.xaml.g.cs

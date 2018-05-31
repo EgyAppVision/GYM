@@ -223,6 +223,8 @@
     <BundleResource Include="Resources\home32.png" />
   </ItemGroup>
   <ItemGroup>
+    <BundleResource Include="Resources\friendRequest.png" />
+    <BundleResource Include="Resources\gymIcon.png" />
     <Content Include="Resources\PersonaTrainer.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
