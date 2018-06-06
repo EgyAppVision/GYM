@@ -14,15 +14,15 @@ namespace FitnessTracker
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class NewPostPage : ContentPage
     {
-        Player Playeruser;
+        User Playeruser;
         List<UserPrefaredActivity> activityList;
         int rows = 2;
 
-        public NewPostPage(Player user)
+        public NewPostPage(User user)
         {
             InitializeComponent();
 
-            Playeruser = new Player();
+            Playeruser = new User();
             Playeruser = user;
 
             this.Title = "Cardio";

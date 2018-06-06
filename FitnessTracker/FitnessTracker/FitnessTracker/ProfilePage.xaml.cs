@@ -14,15 +14,21 @@ namespace FitnessTracker
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ProfilePage : ContentPage
     {
-        Player user;
+        User user;
         List<UserPrefaredActivity> activitiesList;
         List<UserPrefaredPlace> placesList;
-        public  ProfilePage()
+        public  ProfilePage( User player)
         {
             InitializeComponent();
-            user = new Player();
-            string userStr = Application.Current.Properties["user"] as string;
-            user = JsonConvert.DeserializeObject<Player>(userStr);
+            user = new User();
+
+            if (player == null)
+            {
+                 string userStr = Application.Current.Properties["user"] as string;
+                 user = JsonConvert.DeserializeObject<User>(userStr);
+            }
+
+            else user = player;
 
             this.Title = user.firstName + " " + user.lastName;
             activitiesList = new List<UserPrefaredActivity>();

@@ -15,7 +15,7 @@ namespace FitnessTracker
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SignUp : ContentPage
     {
-        Player player;
+        User player;
         List<UserGender> userGenderList;
         List<UserPrefaredActivity> userPreferedActivityList;
         List<UserPrefaredPlace> userpreferedPlaceList;
@@ -89,7 +89,7 @@ namespace FitnessTracker
             if (!string.IsNullOrWhiteSpace(firstnameEntry.Text) && !string.IsNullOrWhiteSpace(lastnameEntry.Text) && !string.IsNullOrWhiteSpace(passwordEntry.Text) && !string.IsNullOrWhiteSpace(emailEntry.Text) && PlacePicker.SelectedIndex != -1 && GenderPicker.SelectedIndex != -1)
             {
                 validationMsgLb.Text = "";
-                player = new Player();
+                player = new User();
                 player.firstName = firstnameEntry.Text;
                 player.lastName = lastnameEntry.Text;
                 player.email = emailEntry.Text;

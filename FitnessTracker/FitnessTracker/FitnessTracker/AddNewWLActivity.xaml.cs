@@ -14,16 +14,16 @@ namespace FitnessTracker
     public partial class AddNewWLActivity : ContentPage
     {
         int rows = 2;
-        Player player;
+        User player;
         List<string> MusclesList;
         List<excercise> excersiseList;
 
-        public AddNewWLActivity( Player user)
+        public AddNewWLActivity( User user)
         { 
-            player = new Player();
+            player = new User();
             player = user;
             string userStr  =  Application.Current.Properties["user"] as string; // from device memory
-            player = JsonConvert.DeserializeObject<Player>(userStr);
+            player = JsonConvert.DeserializeObject<User>(userStr);
 
 
             this.Title = "Weight Lifting";

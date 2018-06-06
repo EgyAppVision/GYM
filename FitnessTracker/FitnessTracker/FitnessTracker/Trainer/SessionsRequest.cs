@@ -14,6 +14,7 @@ namespace FitnessTracker.Trainer
         public int numberOfSessions { get; set; }
         public string userName { get; set; }
         public string userNote { get; set; }
+        public int playerId { get; set; }
 
 
     }

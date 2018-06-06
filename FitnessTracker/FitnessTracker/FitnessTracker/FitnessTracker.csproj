@@ -101,6 +101,9 @@
     </Compile>
     <Compile Include="Trainer\SessionsRequest.cs" />
     <Compile Include="Trainer\Trainer.cs" />
+    <Compile Include="Trainer\TrainerCreateWorkout.xaml.cs">
+      <DependentUpon>TrainerCreateWorkout.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Trainer\TrainerCurrentSessions.xaml.cs">
       <DependentUpon>TrainerCurrentSessions.xaml</DependentUpon>
     </Compile>
@@ -269,6 +272,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Trainer\RequestForm.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Trainer\TrainerCreateWorkout.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

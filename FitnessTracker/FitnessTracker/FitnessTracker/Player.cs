@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace FitnessTracker
 {
    
-        public class Player
+        public class User
         {
             public int userId { get; set; }
             public string firstName { get; set; }
@@ -27,6 +27,29 @@ namespace FitnessTracker
         public int isFollowing { get; set; }
         public int preferedPlace { get; set; }
         public int preferedActivity { get; set; }
+
+
+
+
+
+
+
+
+
+
+
+
+        public User GetUserById(int id)
+        {
+            User user = new User();
+            // Request req = 
+
+            return user;
+            
+        }
     }
+
+
+
 
 }

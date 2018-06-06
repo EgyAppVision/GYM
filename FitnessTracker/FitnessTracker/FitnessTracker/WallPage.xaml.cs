@@ -17,15 +17,15 @@ namespace FitnessTracker
         public ListView ListView { get { return listView; } }
 
         ListView listView;
-        Player user;
+        User user;
         public WallPage()
         {
             InitializeComponent();
 
 
-            user = new Player();
+            user = new User();
             string userStr = Application.Current.Properties["user"] as string;
-            user = JsonConvert.DeserializeObject<Player>(userStr);
+            user = JsonConvert.DeserializeObject<User>(userStr);
 
             //to be deleted
             //user.id = 22;
@@ -77,7 +77,7 @@ namespace FitnessTracker
 
         }
 
-        public void fillWall(Player playerObj)
+        public void fillWall(User playerObj)
         {
             var masterPageItems = new List<MasterPageItem>();
             masterPageItems.Add(new MasterPageItem

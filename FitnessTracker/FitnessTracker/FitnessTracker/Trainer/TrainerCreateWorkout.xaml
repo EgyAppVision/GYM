@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 x:Class="FitnessTracker.Trainer.TrainerCreateWorkout">
+    <ContentPage.Content>
+
+
+        <StackLayout>
+          
+            <StackLayout HeightRequest="50" BackgroundColor="AntiqueWhite"  Margin="10" Orientation="Horizontal" HorizontalOptions="FillAndExpand"  >
+                <Label  FontAttributes="Bold" Text=" weight and"   BackgroundColor="AntiqueWhite"  TextColor="AntiqueWhite" FontSize="20"/>
+                <Label  FontAttributes="Bold"  Text="Expected"  HorizontalOptions="Center" TextColor="Navy" FontSize="20" VerticalOptions="Center"/>
+                <Label  FontAttributes="Bold" Text="Actual" TextColor="Navy" FontSize="20" Margin="60,0,4,0"  HorizontalOptions="End"  VerticalOptions="Center" ></Label>
+            </StackLayout>
+
+            <StackLayout Margin="10" Orientation="Horizontal" HorizontalOptions="FillAndExpand"  BackgroundColor="WhiteSmoke">
+                <Label   Text="Reps"  VerticalOptions="Center" TextColor="Navy" FontSize="20" FontAttributes="Bold"/>
+                <Entry x:name="expRepsTxt" Text="10" Keyboard="Numeric"  Margin="80,0,0,0" VerticalOptions="Center" HorizontalOptions="Center" />
+                <Entry x:Name="actualRepsTxt" IsEnabled="False"  Keyboard="Numeric"  Margin="100,0,0,0" VerticalOptions="Center" Text="20" HorizontalOptions="End" ></Entry>
+            </StackLayout>
+
+            <StackLayout Margin="10" Orientation="Horizontal" HorizontalOptions="FillAndExpand"  BackgroundColor="WhiteSmoke">
+                <Label   Text="Sets"  VerticalOptions="Center" TextColor="Navy" FontSize="20" FontAttributes="Bold"/>
+                <Entry x:name="expSetsTxt" Keyboard="Numeric"  Margin="90,0,0,0" VerticalOptions="Center" HorizontalOptions="Center" Text="6" />
+                <Entry   x:Name="actualSetsTxt" IsEnabled="False"  Keyboard="Numeric"  Margin="100,0,0,0" VerticalOptions="Center" Text="20" HorizontalOptions="End"  ></Entry>
+            </StackLayout>
+
+
+            <StackLayout Margin="10" Orientation="Horizontal" HorizontalOptions="FillAndExpand"  BackgroundColor="WhiteSmoke">
+                <Label   Text="Weight" VerticalOptions="Center" TextColor="Navy" FontSize="20" FontAttributes="Bold"/>
+                <Entry x:name="expWeightTxt" Keyboard="Numeric"  Margin="70,0,0,0" VerticalOptions="Center" HorizontalOptions="Center" Text="50" />
+                <Entry  x:Name="actualWeightTxt"  IsEnabled="False"  Keyboard="Numeric"  Margin="100,0,0,0" VerticalOptions="Center" Text="20" HorizontalOptions="End" ></Entry>
+            </StackLayout>
+            <!--</ViewCell>
+						
+						
+					</DataTemplate>
+				</ListView.ItemTemplate>
+			</ListView>-->
+
+
+            <Button Text="Push WorkOut" x:Name="pushWorkOutBtn" Clicked="pushWorkOutBtn_Clicked" HorizontalOptions="Center"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -11,8 +11,8 @@
 namespace FitnessTracker {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("C:\\Users\\radwa\\Source\\Repos\\GYM\\FitnessTracker\\FitnessTracker\\FitnessTracker\\Wall" +
-        "Page.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("C:\\Users\\radwa\\Desktop\\FitnessTracker\\FitnessTracker\\FitnessTracker\\WallPage.xaml" +
+        "")]
     public partial class WallPage : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]

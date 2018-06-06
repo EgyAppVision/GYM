@@ -37,7 +37,7 @@ namespace FitnessTracker
         public const string matchpasswordPattern = @"^ (?=.*[a - z])(?=.*[A - Z])(?=.*\d).{8,15}$";
 
         // true means validation failed 
-        public static SignUpValidation CheckPage1Validation(Player playerObj)
+        public static SignUpValidation CheckPage1Validation(User playerObj)
         {
             SignUpValidation validationObj = new SignUpValidation();
             if (playerObj.firstName.Length < 2 || playerObj.firstName.Length > 13)

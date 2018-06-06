@@ -14,14 +14,15 @@ namespace FitnessTracker.Trainer
     public partial class TrainerSessionsRequests : ContentPage
     {
         List<SessionsRequest> pendingRequests;
-        Player trainer;
+        User trainer;
         public TrainerSessionsRequests()
         {
+            this.Title = "New Sessions Requests";
             InitializeComponent();
 
-            trainer = new Player();
+            trainer = new User();
             string userStr = Application.Current.Properties["user"] as string;
-            trainer = JsonConvert.DeserializeObject<Player>(userStr);
+            trainer = JsonConvert.DeserializeObject<User>(userStr);
             Request request = new Request();
 
             //call get trainer pending requests service
@@ -63,6 +64,11 @@ namespace FitnessTracker.Trainer
             Button btn = sender as Button;
             var selected = pendingRequests.Find(b => b.id == Convert.ToInt32(btn.ClassId));
             Navigation.PushAsync(new RequestForm(selected));
+        }
+
+        protected override bool OnBackButtonPressed()
+        {
+            return true;
         }
     }
 }

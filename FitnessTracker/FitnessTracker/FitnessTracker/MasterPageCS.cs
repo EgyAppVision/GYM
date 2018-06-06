@@ -14,14 +14,14 @@ namespace FitnessTracker
             public ListView ListView { get { return listView; } }
 
             ListView listView;
-            Player user;
+            User user;
 
             public MasterPageCS()
             {
 
-            user = new Player();
+            user = new User();
             string userStr = Application.Current.Properties["user"] as string;
-            user = JsonConvert.DeserializeObject<Player>(userStr);
+            user = JsonConvert.DeserializeObject<User>(userStr);
 
 
             this.BackgroundImage = "bg.jpg";

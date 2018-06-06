@@ -15,14 +15,14 @@ namespace FitnessTracker
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SignUp2 : ContentPage
     {
-        Player player_signUp2 ;
+        User player_signUp2 ;
         List<UserPrefaredActivity> activityList;
-        public SignUp2( Player player , List< UserPrefaredActivity> userActivityList)
+        public SignUp2( User player , List< UserPrefaredActivity> userActivityList)
         {
             InitializeComponent();
             DateTime dt = new DateTime(01/05/1980);
             DOPPicker.Date = dt;
-            player_signUp2 = new Player();
+            player_signUp2 = new User();
             player_signUp2 = player;
             activityList = new List<UserPrefaredActivity>();
             activityList = userActivityList;
@@ -77,7 +77,7 @@ namespace FitnessTracker
 
      
 
-      async  void  sendSignUpRequest(Player player_signUp2)
+      async  void  sendSignUpRequest(User player_signUp2)
         {
 
            // var jsonStr = JsonConvert.SerializeObject(player_signUp2);

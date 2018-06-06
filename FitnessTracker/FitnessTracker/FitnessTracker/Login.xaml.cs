@@ -54,8 +54,8 @@ namespace FitnessTracker
 
 
                 var userStr = loginResponse.content;
-                Player player = new Player();
-                player = JsonConvert.DeserializeObject<Player>(userStr);
+                User player = new User();
+                player = JsonConvert.DeserializeObject<User>(userStr);
 
                 if (player.email != null)
                 {

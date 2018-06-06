@@ -12,9 +12,13 @@ namespace FitnessTracker.Trainer
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class RequestForm : ContentPage
     {
+        SessionsRequest requestForm;
         public RequestForm(SessionsRequest requesObj)
         {
+
             InitializeComponent();
+            requestForm = new SessionsRequest();
+
             sessionnymberPicker.SelectedIndex = -1;
             for (int i = 1; i <= 50; i++)
             {
@@ -24,10 +28,16 @@ namespace FitnessTracker.Trainer
             playerNoteTxt.Text = requesObj.userNote;
             sessionnymberPicker.SelectedItem = requesObj.numberOfSessions.ToString();
 
-            senderNameLb.Text ="From " +  requesObj.userName; 
+            senderNameLb.Text = requesObj.userName; 
             var tapGestureRecognizer = new TapGestureRecognizer();
             tapGestureRecognizer.Tapped += (s, e) => {
-                //
+
+                //get player object from id
+                User pl = new User();
+               
+
+
+                Navigation.PushAsync(new ProfilePage(pl));
             };
             senderNameLb.GestureRecognizers.Add(tapGestureRecognizer);
         }
@@ -36,6 +46,11 @@ namespace FitnessTracker.Trainer
         private void RejectBtn_Clicked(object sender, EventArgs e)
         {
             Navigation.PopAsync();
+        }
+
+        private void ConfirmBtn_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new TrainerCreateWorkout(requestForm));
         }
     }
 }

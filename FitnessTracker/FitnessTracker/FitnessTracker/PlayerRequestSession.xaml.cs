@@ -17,16 +17,16 @@ namespace FitnessTracker
         List<UserPrefaredPlace> placesList;
         List<UserPrefaredActivity> activitiesList;
         List<Trainer.Trainer> resultList;
-        Player currentUser;
+        User currentUser;
         public PlayerRequestSession()
         {
            
             InitializeComponent();
             GetSignUpData();
             resultList = new List<Trainer.Trainer>();
-            currentUser = new Player();
+            currentUser = new User();
             string userStr = Application.Current.Properties["user"] as string; // from device memory
-            currentUser = JsonConvert.DeserializeObject<Player>(userStr);
+            currentUser = JsonConvert.DeserializeObject<User>(userStr);
 
             PlacePicker.Items.Add("Any");
             PlacePicker.SelectedIndex = 0;
