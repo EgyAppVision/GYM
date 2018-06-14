@@ -13,7 +13,7 @@
                 <Picker x:Name="sessionnymberPicker" VerticalOptions="StartAndExpand"  ></Picker>
             </StackLayout>
             <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Margin="0,35,0,0">
-                <Button x:Name="ConfirmBtn" Text="Confirm"></Button>
+                <Button x:Name="ConfirmBtn" Text="Confirm" Clicked="ConfirmBtn_Clicked"></Button>
                 <Button x:Name="CancelBtn" Clicked="CancelBtn_Clicked" Text="Cancel"></Button>
             </StackLayout>
             </StackLayout>

@@ -85,64 +85,66 @@ namespace FitnessTracker
             {
                 listGrid.Children.Remove(child);
             }
-            Trainer.Trainer result = new Trainer.Trainer();
-            result.name = "Aly Mazhar";
-            result.activity = 3;
-            result.phone = "01234567899";
-            result.place = 2;
-            resultList.Add(result);
+            //Trainer.Trainer result = new Trainer.Trainer();
+            //result.name = "Aly Mazhar";
+            //result.activity = 3;
+            //result.phone = "01234567899";
+            //result.place = 2;
+            //resultList.Add(result);
 
-            Trainer.Trainer result2 = new Trainer.Trainer();
-            result2.name = "Radwa Alaa";
-            result2.activity = 2;
-            result2.phone = "01234567899";
-            result2.place = 4;
-            resultList.Add(result2);
+            //Trainer.Trainer result2 = new Trainer.Trainer();
+            //result2.name = "Radwa Alaa";
+            //result2.activity = 2;
+            //result2.phone = "01234567899";
+            //result2.place = 4;
+            //resultList.Add(result2);
  
-            Trainer.Trainer result3 = new Trainer.Trainer();
-            result3.name = "Ramadan Sobhy";
-            result3.activity = 1;
-            result3.phone = "01234567899";
-            result3.place = 3;
+            //Trainer.Trainer result3 = new Trainer.Trainer();
+            //result3.name = "Ramadan Sobhy";
+            //result3.activity = 1;
+            //result3.phone = "01234567899";
+            //result3.place = 3;
 
-            resultList.Add(result3);
+            //resultList.Add(result3);
 
             int place = PlacePicker.SelectedIndex == 0 ? 0 : placesList.Find(p => p.value == PlacePicker.SelectedItem.ToString()).id;
             int activity = ActivityPicker.SelectedIndex == 0 ? 0 : activitiesList.Find(a => a.value == ActivityPicker.SelectedItem.ToString()).id;
             listGrid.RowSpacing = 8.0;
 
-            //http://ServerIP:ServerPort/gymAppMS/userServices/GetAllUsersByname?keyname=ashraf&userId=1&place=1&activity=1
 
-            //Request request = new Request();
-            //var response = await request.callService("userServices/GetAllUsersByname?keyname=" + nameEntry.Text + "&userId=" + currentUser.userId + "&place=" + place
-            //    + "&activity=" + activity, "", "GET");
+            Request request = new Request();
+            var response = await request.callService("/userServices/SearchTranier?keyname= " + nameEntry.Text + "&userId= " + currentUser.userId  , "" , "GET");
 
 
 
-            //if (response.status == true)
+            if (response.status == true)
 
-            //{
-            //    var content = response.content;
-            //    if (content != "[]")
-            //    {
-            //        resultList = new List<Trainer.Trainer>();
-            //        resultList = JsonConvert.DeserializeObject<List<Trainer.Trainer>>(content);
-            string placrStr ="";
-            string activityStr ="";
+            {
+                var content = response.content;
+                if (content != "[]")
+                {
+                    resultList = new List<Trainer.Trainer>();
+                    resultList = JsonConvert.DeserializeObject<List<Trainer.Trainer>>(content);
+                    string placrstr = "";
+                    string activityStr = "";
 
-            for (int i = 0; i < resultList.Count(); i++)
-                   {
-                       var pl = resultList[i];
-                System.Diagnostics.Debug.WriteLine("row is :" + i);
-                placrStr = placesList.Find(v => v.id == pl.place).value;
-                activityStr = activitiesList.Find(a => a.id == pl.activity).value;
+                    for (int i = 0; i < resultList.Count(); i++)
+                    {
+                        var pl = resultList[i];
+                        System.Diagnostics.Debug.WriteLine("row is :" + i);
+                        placrstr = placesList.Find(v => v.id == pl.place).value;
+                        activityStr = activitiesList.Find(a => a.id == pl.activity).value;
 
-                CreatStack(pl.name, pl.phone, placrStr, activityStr, i);
+                        CreatStack(pl.name, pl.phone, placrstr, activityStr, i);
                     }
-               // }
-          //  }
+                    
+                }
+                else await DisplayAlert("Network Error!", "Network error has occured", "ok");
 
-          //  else await DisplayAlert("Network Error!", "Network error has occured", "ok");
+            }
+
+
+            else await DisplayAlert("Network Error!", "Network error has occured", "ok");
         }
 
 

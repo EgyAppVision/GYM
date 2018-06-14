@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -48,9 +49,8 @@ namespace FitnessTracker.Trainer
             Navigation.PopAsync();
         }
 
-        private void ConfirmBtn_Clicked(object sender, EventArgs e)
+        private async void ConfirmBtn_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new TrainerCreateWorkout(requestForm));
-        }
+               }
     }
 }
