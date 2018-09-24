@@ -13,7 +13,7 @@ namespace FitnessTracker
         {
             InitializeComponent();
             
-            MainPage = new NavigationPage(new FitnessTracker.MainPage())//main page
+            MainPage = new NavigationPage(new MainPage())//main page
             {
 
                 BarBackgroundColor = Color.FromHex("#47C293"),

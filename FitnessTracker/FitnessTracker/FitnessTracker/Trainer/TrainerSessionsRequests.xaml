@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FitnessTracker.Trainer.TrainerSessionsRequests">
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView SeparatorVisibility="Default" SeparatorColor="Black"  ItemsSource="{Binding pendingRequests}" HasUnevenRows="True" x:Name="lv"  Margin="10,20,10,20">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Margin="10" Orientation="Horizontal" HorizontalOptions="FillAndExpand"  BackgroundColor="WhiteSmoke">
+                                <Label x:Name="Name"  Text="{Binding userName}"  TextColor="Navy" FontSize="20"/>
+                                <!--<label x:name="numbers" text="{binding race}"/>-->
+                                <Button ClassId="{Binding id}" x:Name="requestBtn" Text="View Request" Clicked="requestBtn_Clicked" HorizontalOptions="EndAndExpand" ></Button>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

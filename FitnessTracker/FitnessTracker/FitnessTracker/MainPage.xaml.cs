@@ -20,9 +20,12 @@ namespace FitnessTracker
 
             if (Application.Current.Properties.ContainsKey("user"))
             {
+                System.Diagnostics.Debug.WriteLine("Application.Current.Properties.ContainsKey(\"user\")");
                 if (Application.Current.Properties["user"] != null)
                 {
-                     Navigation.PushAsync(new MainPageCS());
+                    System.Diagnostics.Debug.WriteLine("Application.Current.Properties[\"user\"] != null");
+
+                    Navigation.PushAsync(new MainPageCS());
 
                 }
 

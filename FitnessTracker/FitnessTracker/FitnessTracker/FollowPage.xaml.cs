@@ -16,20 +16,20 @@ namespace FitnessTracker
     {
         List<UserPrefaredPlace> placesList;
         List<UserPrefaredActivity> activitiesList;
-        List<Player> resultList;
-        Player currentUser;
+        List<User> resultList;
+        User currentUser;
         public FollowPage()
         {
             this.Title = "Find Friends";
             InitializeComponent();
             placesList = new List<UserPrefaredPlace>();
             activitiesList = new List<UserPrefaredActivity>();
-            resultList = new List<Player>();
+            resultList = new List<User>();
             GetSignUpData();
 
-            currentUser = new Player();
+            currentUser = new User();
             string userStr = Application.Current.Properties["user"] as string; // from device memory
-            currentUser = JsonConvert.DeserializeObject<Player>(userStr);
+            currentUser = JsonConvert.DeserializeObject<User>(userStr);
 
             PlacePicker.Items.Add("Any");
             PlacePicker.SelectedIndex = 0;
@@ -108,9 +108,10 @@ namespace FitnessTracker
             int place = PlacePicker.SelectedIndex == 0 ? 0 : placesList.Find(p=>p.value == PlacePicker.SelectedItem.ToString()).id;
             int activity = ActivityPicker.SelectedIndex == 0 ? 0 : activitiesList.Find(a => a.value == ActivityPicker.SelectedItem.ToString()).id;
 
+            //http://ServerIP:ServerPort/gymAppMS/userServices/GetAllUsersByname?keyname=ashraf&userId=1&place=1&activity=1
 
             Request request = new Request();
-            var response = await  request.callService("userServices/GetAllUsersByname?name=" + nameEntry.Text + "&userId=" + currentUser.userId + "&place=" +place
+            var response = await  request.callService("userServices/GetAllUsersByname?keyname=" + nameEntry.Text + "&userId=" + currentUser.userId + "&place=" +place
                 +"&activity=" + activity, "", "GET");
 
 
@@ -121,8 +122,8 @@ namespace FitnessTracker
                 var content = response.content;
                 if (content != "[]")
                 {
-                    resultList = new List<Player>();
-                    resultList = JsonConvert.DeserializeObject<List<Player>>(content);
+                    resultList = new List<User>();
+                    resultList = JsonConvert.DeserializeObject<List<User>>(content);
 
                     for (int i = 0; i < resultList.Count(); i++)
                     {

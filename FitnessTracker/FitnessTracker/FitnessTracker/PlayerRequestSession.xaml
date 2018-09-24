@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FitnessTracker.PlayerRequestSession">
+    <ContentPage.Title>Find a trainer</ContentPage.Title>
+    <ContentPage.Content>
+        <StackLayout Margin="10,10,10,10" Orientation="Vertical">
+        <Label Text="Search By:" FontSize="Large" ></Label>
+        <Frame   VerticalOptions="Start"  Margin="10,0,10,0" CornerRadius="8" HasShadow="True" BackgroundColor="#EEEFF1" 
+       Padding="0">
+            <StackLayout Margin="10" Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                <StackLayout BackgroundColor="Yellow" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                    <Label Text="Name*: " Margin="8,8,15,8"></Label>
+                    <Entry x:Name="nameEntry" Placeholder="Name" HorizontalOptions="FillAndExpand" VerticalOptions="Center" HorizontalTextAlignment="Center" ></Entry>
+                </StackLayout>
+
+                <StackLayout BackgroundColor="Yellow" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                    <Label Text="Place: " Margin="8,8,15,8"></Label>
+                    <Picker x:Name="PlacePicker"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" ></Picker>
+                </StackLayout>
+
+                <StackLayout BackgroundColor="Yellow" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                    <Label Text="Activity: " Margin="8,8,15,8"></Label>
+                    <Picker x:Name="ActivityPicker" HorizontalOptions="FillAndExpand" VerticalOptions="Center"></Picker>
+                </StackLayout>
+
+                <Button  HorizontalOptions="Center"  Margin="0,0,0,10" Text="Search" Clicked="SearchButton_clicked"></Button>
+            </StackLayout>
+        </Frame>
+
+
+        <ScrollView Margin="20,20,20,20" x:Name="resultStack">
+                <Grid  x:Name="listGrid" RowSpacing="10" Padding="0">
+                <!--<Grid.ColumnDefinitions>
+                        <ColumnDefinition>
+
+                        </ColumnDefinition>
+                        <ColumnDefinition>
+
+                        </ColumnDefinition>
+                        <ColumnDefinition>
+
+                        </ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>-->
+
+
+            </Grid>
+            <!--<ListView x:Name="listView" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal" BackgroundColor="Beige">
+                                    <Label Margin="8,0,0,0" Text="{Binding userName}" VerticalOptions="Center" />
+                                    <Button Command="{Binding Path=BindingContext.DeleteVolumeCommand, Source={x:Reference MissingVolumeListView}}" 
+        CommandParameter="{Binding .}" x:Name="followBtn" Clicked="followBtn_Clicked" Text="{Binding isFollowed}"  VerticalOptions="Center" HorizontalOptions="End"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>-->
+        </ScrollView>
+
+
+    </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

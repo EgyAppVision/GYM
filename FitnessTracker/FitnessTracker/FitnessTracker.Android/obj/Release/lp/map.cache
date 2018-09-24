@@ -1,5 +1,6 @@
 FitnessTracker
 FormsViewGroup
+Newtonsoft.Json
 System.ObjectModel
 System.Runtime
 Xamarin.Android.Support.Animated.Vector.Drawable
@@ -20,6 +21,3 @@ Xamarin.Forms.Core
 Xamarin.Forms.Platform.Android
 Xamarin.Forms.Platform
 Xamarin.Forms.Xaml
-System.Resources.ResourceManager
-System.Diagnostics.Tools
-Newtonsoft.Json

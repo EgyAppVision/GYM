@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FitnessTracker.Trainer.RequestForm">
+    <ContentPage.Content>
+        <Frame   Margin="15,25,15,15" CornerRadius="8" HasShadow="True" VerticalOptions="Start" BackgroundColor="#EEEFF1" >
+
+            <StackLayout  Margin="5,15,5,15"  Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
+                <StackLayout Orientation="Horizontal" Margin="0,0,20,0">
+                    <Label Text="From :  " FontSize="Medium"></Label>
+                    <Label x:Name="senderNameLb" FontSize="Medium"  TextColor="Blue" FontAttributes="Bold" ></Label>
+
+                </StackLayout>
+
+            <Label FontAttributes="Bold" Text="Player's message:" HorizontalOptions="Start"></Label>
+                <Label x:Name="playerNoteTxt" BackgroundColor="WhiteSmoke" Margin="0,0,0,15" HeightRequest="80"  ></Label>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand">
+                    <Label FontAttributes="Bold" Margin="0,5,20,0" VerticalOptions="Center" Text="Number of sessions: "></Label>
+                    <Picker x:Name="sessionnymberPicker" VerticalOptions="StartAndExpand"  ></Picker>
+                </StackLayout>
+                
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Margin="0,35,0,0">
+                    <Button x:Name="ConfirmBtn" Clicked="ConfirmBtn_Clicked" Text="Confirm"></Button>
+                    <Button x:Name="CancelBtn" Clicked="RejectBtn_Clicked" Text="Reject"></Button>
+                </StackLayout>
+            </StackLayout>
+        </Frame>
+    </ContentPage.Content>
+</ContentPage>

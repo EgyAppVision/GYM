@@ -24,7 +24,7 @@ namespace FitnessTracker
             {
                 HttpClient client = new HttpClient();
                 HttpResponseMessage response = new HttpResponseMessage();
-                string urlStr1 = "http://66.23.230.93:8080/gymAppMS/" + serviceName;
+                string urlStr1 = "http://66.23.230.93:9090/gymAppMS/" + serviceName;
                 switch (type)
                 {
                     case "POST":

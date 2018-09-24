@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FitnessTracker.TrainerProfileView">
+    <ContentPage.Content>
+
+    <StackLayout>
+        <StackLayout  BackgroundColor="#58D0A2">
+            <Image Margin="0,30,0,30" x:Name="profileImg" Source="profileicon64.png" HorizontalOptions="Center" VerticalOptions="Center"></Image>
+        </StackLayout>
+        <StackLayout Margin="10" >
+            <ScrollView>
+                <Frame CornerRadius="8" HasShadow="True" BackgroundColor="#EEEFF1">
+                    <Grid >
+                        <Label Text="First Name" FontAttributes="Bold" Grid.Row="0" Grid.Column="0"></Label>
+                        <Label x:Name="firstNameLb"  Grid.Row="0" Grid.Column="1"></Label>
+
+                       
+                        <Label Text="Email" FontAttributes="Bold" Grid.Row="1" Grid.Column="0"></Label>
+                        <Label x:Name="emailLb"  Grid.Row="1" Grid.Column="1"></Label>
+
+                       
+                        <Label Text="Mobile Number" FontAttributes="Bold" Grid.Row="2" Grid.Column="0"></Label>
+                        <Label x:Name="mobileNoLb"  Grid.Row="2" Grid.Column="1"></Label>
+
+                        <Label Text="Place" FontAttributes="Bold" Grid.Row="3" Grid.Column="0"></Label>
+                        <Label x:Name="preferedPlaceLb"  Grid.Row="3" Grid.Column="1"></Label>
+
+                        <Label Text="Activity" FontAttributes="Bold" Grid.Row="4" Grid.Column="0"></Label>
+                        <Label x:Name="preferedActivityLb"  Grid.Row="4" Grid.Column="1"></Label>
+                        <Button x:Name="requestBtn" Text="Send Request" Grid.Row="5" Grid.ColumnSpan="2" Clicked="requestBtn_Clicked" ></Button>
+                    
+                    </Grid>
+                </Frame>
+            </ScrollView>
+        </StackLayout>
+    </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

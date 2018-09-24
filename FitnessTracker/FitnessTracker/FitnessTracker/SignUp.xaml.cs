@@ -15,7 +15,7 @@ namespace FitnessTracker
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SignUp : ContentPage
     {
-        Player player;
+        User player;
         List<UserGender> userGenderList;
         List<UserPrefaredActivity> userPreferedActivityList;
         List<UserPrefaredPlace> userpreferedPlaceList;
@@ -86,44 +86,58 @@ namespace FitnessTracker
 
         async private void Next1_click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(firstnameEntry.Text) && !string.IsNullOrWhiteSpace(lastnameEntry.Text) && !string.IsNullOrWhiteSpace(passwordEntry.Text) && !string.IsNullOrWhiteSpace(emailEntry.Text) && PlacePicker.SelectedIndex != -1  && GenderPicker.SelectedIndex !=-1)
+            if (!string.IsNullOrWhiteSpace(firstnameEntry.Text) && !string.IsNullOrWhiteSpace(lastnameEntry.Text) && !string.IsNullOrWhiteSpace(passwordEntry.Text) && !string.IsNullOrWhiteSpace(emailEntry.Text) && PlacePicker.SelectedIndex != -1 && GenderPicker.SelectedIndex != -1)
             {
                 validationMsgLb.Text = "";
-                player = new Player();
+                player = new User();
                 player.firstName = firstnameEntry.Text;
                 player.lastName = lastnameEntry.Text;
                 player.email = emailEntry.Text;
                 player.password = passwordEntry.Text;
                 player.gender = userGenderList.Find(g => GenderPicker.SelectedItem.ToString() == g.value).id;
                 player.mobile = mobileEntry.Text;
-                player.place = userpreferedPlaceList.Find(p =>  PlacePicker.SelectedItem.ToString() == p.value).id.ToString();
+                player.place = userpreferedPlaceList.Find(p => PlacePicker.SelectedItem.ToString() == p.value).id.ToString();
                 player.userName = firstnameEntry.Text + lastnameEntry.Text;
 
-                Request requestObj = new Request();
-                var mailExistResponse = await requestObj.callService("loadDataServices/userServices/isMailExist?userEmail=" + player.email.ToString(), "", "GET");
-                if (mailExistResponse.status == true && mailExistResponse.content == "false")
+
+                SignUpValidation checkValidationObj = new SignUpValidation();
+                checkValidationObj = SignUpValidation.CheckPage1Validation(player);
+                System.Diagnostics.Debug.WriteLine("validation : " + player.firstName + " ," + player.lastName + " ," + player.mobile + " ," + player.password + " , " + player.email );
+                if (SignUpValidation.isNotValid == true)
                 {
-                    emailEntry.Focus();
-                    await DisplayAlert("Not Completed!!", "this Email is already used please sign up with another email address", "OK");
-
-                }
-
-                else if (mailExistResponse.status == true && mailExistResponse.content == "true")
-                {
-                   await Navigation.PushAsync(new SignUp2(player, userPreferedActivityList));
-
-                }
-
-                else 
-                {
-                    await DisplayAlert("Error!", "Network Error, Please try again later", "OK");
-
-
+                    validationMsgLb.Text = "Please Enter Valid info";
+                    //show a validation msg for each field
                 }
 
 
+                else
+                {
+
+                    Request requestObj = new Request();
+                    var mailExistResponse = await requestObj.callService("userServices/isMailExist?userEmail=" + player.email.ToString(), "", "GET");
+                    if (mailExistResponse.status == true && mailExistResponse.content == "true")
+                    {
+                        emailEntry.Focus();
+                        await DisplayAlert("Not Completed!!", "this Email is already used please sign up with another email address", "OK");
+
+                    }
+
+                    else if (mailExistResponse.status == true && mailExistResponse.content == "false")
+                    {
+                        await Navigation.PushAsync(new SignUp2(player, userPreferedActivityList));
+
+                    }
+
+                    else
+                    {
+                        await DisplayAlert("Error!", "Network Error, Please try again later", "OK");
+
+
+                    }
+
+
+                }
             }
-
 
 
             else
@@ -131,11 +145,11 @@ namespace FitnessTracker
                 //await Navigation.PushAsync(new SignUp2(player , userPreferedActivityList)); //to be deleted
                 validationMsgLb.Text = "Please Fill all the required fields!";
             }
+
+            }
+
+
         }
 
 
-      
-
-
     }
-}

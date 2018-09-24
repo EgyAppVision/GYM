@@ -14,16 +14,16 @@ namespace FitnessTracker
     public partial class AddNewWLActivity : ContentPage
     {
         int rows = 2;
-        Player player;
+        User player;
         List<string> MusclesList;
         List<excercise> excersiseList;
 
-        public AddNewWLActivity( Player user)
+        public AddNewWLActivity( User user)
         { 
-            player = new Player();
+            player = new User();
             player = user;
             string userStr  =  Application.Current.Properties["user"] as string; // from device memory
-            player = JsonConvert.DeserializeObject<Player>(userStr);
+            player = JsonConvert.DeserializeObject<User>(userStr);
 
 
             this.Title = "Weight Lifting";
@@ -128,7 +128,28 @@ namespace FitnessTracker
             string workoutStr = JsonConvert.SerializeObject(myWorkout);
 
            var response =   await addWorkoutRequest.callService("Workout/addworkout", workoutStr, "POST");
+            if(response.status == true)
+            {
+                if(response.content == "STATUS:-3")
+                {
+                    await DisplayAlert("Error!", "Server Error has occured please try again later!", "Ok");
+                    return;
+                }
 
+                else if (response.content == "STATUS:-1")
+                {
+                    await DisplayAlert("Error!", " Invalid Parameters Please enter valid info", "Ok");
+                    return;
+                }
+
+                await DisplayAlert("Published!", "Your work out has been published successfully", "Ok");
+                clearFields();
+            }
+
+            else
+            {
+                await DisplayAlert("Error", "Network Error!", "Ok");
+            }
         }
 
 
@@ -228,8 +249,30 @@ namespace FitnessTracker
         {
             SendWorkoutRequest();
         }
+
+
+
+        void clearFields()
+        {
+            var childs = setsGrid.Children.ToList();
+            workoutNoteTxt.Text = "";
+
+            foreach (var child in childs)
+            {
+                if (Grid.GetRow(child) > 0)
+                {
+                    setsGrid.Children.Remove(child);
+                }
+
+
+            }
+
+            AddNewRow(1);
+
+        }
+
     }
 
 
-   
+
 }

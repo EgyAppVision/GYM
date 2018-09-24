@@ -14,14 +14,14 @@ namespace FitnessTracker
             public ListView ListView { get { return listView; } }
 
             ListView listView;
-            Player user;
+            User user;
 
             public MasterPageCS()
             {
 
-            user = new Player();
+            user = new User();
             string userStr = Application.Current.Properties["user"] as string;
-            user = JsonConvert.DeserializeObject<Player>(userStr);
+            user = JsonConvert.DeserializeObject<User>(userStr);
 
 
             this.BackgroundImage = "bg.jpg";
@@ -39,6 +39,9 @@ namespace FitnessTracker
                     IconSource = "contacts.png",
                     TargetType = typeof(ProfilePage)
                 });
+
+            if (user.type == 1)
+            {
                 masterPageItems.Add(new MasterPageItem
                 {
                     Title = "Find Friends",
@@ -47,10 +50,49 @@ namespace FitnessTracker
                 });
                 masterPageItems.Add(new MasterPageItem
                 {
-                    Title = "LogOut",
-                    IconSource = "logout.png",
-                    TargetType = typeof(LogOutCS)
+                    Title = "Find a Trainer",
+                    IconSource = "people.png",
+                    TargetType = typeof(PlayerRequestSession)
                 });
+
+                masterPageItems.Add(new MasterPageItem
+                {
+                    Title = "Manage your sessions",
+                    IconSource = "listIcon.png",
+                    TargetType = typeof(PlayerSessionList)
+                });
+
+
+            }
+
+            //for tariner
+            if (user.type == 2 )
+            {
+                masterPageItems.Add(new MasterPageItem
+                {
+                    Title = "Pending Requests",
+                    IconSource = "friendRequest.png",
+                    TargetType = typeof(Trainer.TrainerSessionsRequests)
+                });
+
+
+                masterPageItems.Add(new MasterPageItem
+                {
+                    Title = "My running sessions",
+                    IconSource = "gymIcon.png",
+                    TargetType = typeof(Trainer.TrainerCurrentSessions)
+                });
+
+            }
+
+
+            masterPageItems.Add(new MasterPageItem
+            {
+                Title = "LogOut",
+                IconSource = "logout.png",
+                TargetType = typeof(LogOutCS)
+            });
+
 
             listView = new ListView
             {
