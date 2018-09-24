@@ -197,8 +197,10 @@ public class LoadDataDaoImp implements LoadDataDao {
                 + "exercise_type on exercise.exercise_type_id = exercise_type.exercise_type_id\n"
                 + "inner join muscle on muscle.muscle_id = exercise.exercise_sub_muscle\n"
                 + "inner join muscle_type on muscle.muscle_type_id = muscle_type.muscle_type_id\n"
-                + "inner join muscle_relation on muscle_relation.sub_muscle_id = muscle.muscle_id\n"
-                + "where muscle_relation.main_muscle_id = " + mainMuscleId;
+                + "inner join muscle_relation on muscle_relation.sub_muscle_id = muscle.muscle_id\n";
+                
+        if(mainMuscleId>0)
+               sql+=  "where muscle_relation.main_muscle_id = " + mainMuscleId;
         return jdbcTemplate.query(sql, new ResultSetExtractor<List<Exercise>>() {
             @Override
             public List<Exercise> extractData(ResultSet rs) throws SQLException,

@@ -50,6 +50,8 @@ public class User implements Serializable {
     private int type;
     private int isFollowing;
 
+    private String preferedActivityDesc;
+        private String preferedPlaceDesc;
     public int getUserId() {
         return userId;
     }
@@ -168,6 +170,22 @@ public class User implements Serializable {
 
     public void setIsFollowing(int isFollowing) {
         this.isFollowing = isFollowing;
+    }
+
+    public String getPreferedActivityDesc() {
+        return preferedActivityDesc;
+    }
+
+    public void setPreferedActivityDesc(String preferedActivityDesc) {
+        this.preferedActivityDesc = preferedActivityDesc;
+    }
+
+    public String getPreferedPlaceDesc() {
+        return preferedPlaceDesc;
+    }
+
+    public void setPreferedPlaceDesc(String preferedPlaceDesc) {
+        this.preferedPlaceDesc = preferedPlaceDesc;
     }
 
     @Override

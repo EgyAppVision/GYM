@@ -8,7 +8,6 @@ package com.appvision.gym.dao;
 import com.appvision.gym.model.Exercise;
 import com.appvision.gym.model.LookupModel;
 import com.appvision.gym.model.Muscle;
-import java.util.ArrayList;
 import java.util.List;
 
 /**

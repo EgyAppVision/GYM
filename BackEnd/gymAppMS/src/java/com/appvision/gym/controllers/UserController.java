@@ -1,9 +1,12 @@
 package com.appvision.gym.controllers;
 
+import com.appvision.gym.defines.Defines;
 import com.appvision.gym.model.LoginModel;
+import com.appvision.gym.model.RequestTrainer;
 import com.appvision.gym.model.User;
 import com.appvision.gym.services.SignupService;
 import java.util.List;
+import java.util.logging.Level;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import org.apache.log4j.Logger;
@@ -142,7 +145,7 @@ public class UserController {
                 return  "STATUS:-1";
             }
 
-            List<User> users = signupService.GetAllUsersByName(keyname, userId, place, activity);
+            List<User> users = signupService.GetAllUsersByName(keyname, userId, place, activity,0);
         debuglog.debug("#####################End#############################");
         return users;
         } catch (Exception e) {
@@ -178,5 +181,109 @@ public class UserController {
         }
         debuglog.debug("#####################Ending#############################");
         return "STATUS:" + -3;
+    }
+    
+    
+    @CrossOrigin(origins = "*")
+    @RequestMapping(value = "/SearchTranier", method = RequestMethod.GET)
+    public Object SearchTranier(HttpServletRequest request) {
+        debuglog.debug("#####################Starting#############################");
+        String keyname;
+        int userId;
+        int place = 0;
+        int activity = 0;
+        try {
+
+            debuglog.debug("Request Reciver with Keyname= " + request.getParameter("keyname") + " , userId= " + request.getParameter("userId") + " , place = " + request.getParameter("place") + " , activity= " + request.getParameter("activity"));
+            keyname = request.getParameter("keyname");
+            if (request.getParameter("userId") != null && request.getParameter("userId") != "") {
+                userId = new Integer(request.getParameter("userId"));
+            } else {
+                debuglog.debug("Key name can't be null");
+                return  "STATUS:-1";
+            }
+            if (request.getParameter("place") != null && request.getParameter("place") != "") {
+                place = new Integer(request.getParameter("place"));
+            }
+
+            if (request.getParameter("activity") != null && request.getParameter("activity") != "") {
+                activity = new Integer(request.getParameter("activity"));
+            }
+
+            if (keyname == null || keyname == "") {
+                debuglog.debug("Key name can't be null");
+                return  "STATUS:-1";
+            }
+
+            List<User> users = signupService.GetAllUsersByName(keyname, userId, place, activity,Defines.userTypeTrainer);
+        debuglog.debug("#####################End#############################");
+        return users;
+        } catch (Exception e) {
+            debuglog.error("Error : " + e.getMessage(), e);
+            debuglog.debug("#####################End#############################");
+            return "STATUS:-3";
+        }
+        
+
+    }
+    
+    
+      @CrossOrigin(origins = "*")
+    @RequestMapping(value = "/addrequesttrainer", method = RequestMethod.POST)
+    public String AddRequestTrainer(@Valid @RequestBody RequestTrainer requestTrainer, BindingResult bindingResult) {
+        debuglog.debug("#####################Starting#############################");
+        debuglog.debug("receving request  " + requestTrainer.toString());
+        if (!bindingResult.hasErrors()) {
+
+            boolean result = signupService.AddrequestTrainer(requestTrainer);
+            if (result) {
+                debuglog.debug("respones : STATUS:" + 0);
+                debuglog.debug("#####################End#############################");
+                return "STATUS:" + 0 ;
+            }
+        } else {
+            debuglog.debug("Invaild following inptus ");
+            for (ObjectError error : bindingResult.getAllErrors()) {
+                debuglog.debug(error.getDefaultMessage());
+            }
+            debuglog.debug("respones : STATUS:" + -3);
+            debuglog.debug("#####################End#############################");
+            return "STATUS:" + -3;
+        }
+        debuglog.debug("respones : STATUS:" + -1);
+        debuglog.debug("#####################End#############################");
+        return "STATUS:" + -1;
+    }
+    
+    
+  @CrossOrigin(origins = "*")
+    @RequestMapping(value = "/GetUserProfile", method = RequestMethod.GET)
+    public Object GetUserProfile(@RequestParam String userId) {
+        debuglog.debug("#####################Starting#############################");
+         debuglog.debug("Request Recived with userId= " +userId  );
+        int userIdint;
+       
+        try {
+            userIdint = Integer.valueOf(userId);
+           
+        } catch (Exception ex) {
+            debuglog.debug("Invalid input paramter ");
+            debuglog.error("Error "+ ex.getMessage() , ex);
+            debuglog.debug("#####################Ending#############################");
+            return "STATUS:" + -1;
+        }
+
+        User result =null;
+        try {
+            result = signupService.GetUserProfile(userIdint);
+        } catch (Exception ex) {
+            debuglog.debug("#####################Ending#############################");
+        return "STATUS:" + -3;
+        }
+     
+            debuglog.debug("#####################Ending#############################");
+            return result;
+        
+       
     }
 }

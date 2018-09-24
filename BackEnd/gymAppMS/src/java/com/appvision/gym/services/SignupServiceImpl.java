@@ -1,10 +1,12 @@
 package com.appvision.gym.services;
 
 import com.appvision.gym.dao.LoadDataDao;
+import com.appvision.gym.dao.RequestDao;
 import com.appvision.gym.dao.UserDao;
 import com.appvision.gym.defines.Defines;
 import com.appvision.gym.model.LoginModel;
 import com.appvision.gym.model.LookupModel;
+import com.appvision.gym.model.RequestTrainer;
 import com.appvision.gym.model.SingupDataModel;
 import com.appvision.gym.model.User;
 import java.sql.Connection;
@@ -24,6 +26,9 @@ public class SignupServiceImpl implements SignupService {
  private Logger debuglog = Logger.getLogger("debuglog");
     @Autowired
     private UserDao userDao;
+    @Autowired
+    private 
+            RequestDao requestDao;
     @Autowired
     private LoadDataDao loadDataDao;
 
@@ -71,23 +76,23 @@ public class SignupServiceImpl implements SignupService {
     }
 
     @Override
-    public List<User> GetAllUsersByName(String name, int userId,int place, int activity)throws Exception{
+    public List<User> GetAllUsersByName(String name, int userId,int place, int activity,int userType)throws Exception{
        try{
            
         name = name.trim().toLowerCase();
         debuglog.debug("Scaning Key" + name );
         if (matchMailRegx(name, Defines.mailPattern)) {
             debuglog.debug("E-mail Found selecting by Email " );
-            return userDao.GetAllUsersByName(name, userId, Defines.mailSearchingMode , place,  activity);
+            return userDao.GetAllUsersByName(name, userId, Defines.mailSearchingMode , place,  activity, userType);
         } else if (matchMailRegx(name, Defines.mobilePattern)) {
             debuglog.debug("Mobile Found selecting by mobile " );
-            return userDao.GetAllUsersByName(name, userId, Defines.moblieSearchingMode, place,  activity);
+            return userDao.GetAllUsersByName(name, userId, Defines.moblieSearchingMode, place,  activity,userType);
         } else if (name.contains(" ")) {
             debuglog.debug("firstName and lastName Found selecting by Fristname and lastname  " );
-            return userDao.GetAllUsersByName(name, userId, Defines.twoStringSearchingMode, place,  activity);
+            return userDao.GetAllUsersByName(name, userId, Defines.twoStringSearchingMode, place,  activity,userType);
         } else {
             debuglog.debug("will be selecting by one work as  frist name and last name " );
-            return userDao.GetAllUsersByName(name, userId, Defines.oneStringSearchingMode ,  place,  activity);
+            return userDao.GetAllUsersByName(name, userId, Defines.oneStringSearchingMode ,  place,  activity,userType);
         }
        }catch(Exception ex ) 
        {
@@ -108,6 +113,21 @@ public class SignupServiceImpl implements SignupService {
     @Override
     public boolean Follow(int follower, int follwing) {
        return userDao.Follow(follower, follwing);
+    }
+
+    @Override
+    public boolean AddrequestTrainer(RequestTrainer requestTrainer) {
+       return requestDao.AddrequestTrainer(requestTrainer);
+    }
+
+    @Override
+    public boolean UpdateRequestStatus(int requestId, int requestStauts) {
+       return requestDao.ChangeRequestSataus(requestId, requestStauts);
+    }
+
+    @Override
+    public User GetUserProfile(int UserID) throws Exception {
+        return userDao.GetUserProfile(UserID);
     }
 
 }

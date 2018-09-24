@@ -3,6 +3,7 @@ package com.appvision.gym.dao;
 import com.appvision.gym.defines.Defines;
 import com.appvision.gym.model.LoginModel;
 import com.appvision.gym.model.LookupModel;
+import com.appvision.gym.model.RequestTrainer;
 import com.appvision.gym.model.User;
 import java.sql.Connection;
 import java.sql.Date;
@@ -24,7 +25,7 @@ import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
 
-;
+
 
 @Repository("sellerDao")
 public class UserDaoImpl implements UserDao {
@@ -158,7 +159,7 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public List<User> GetAllUsersByName(String name, int userId, int mode, int place, int activity) throws Exception {
+    public List<User> GetAllUsersByName(String name, int userId, int mode, int place, int activity,int userType) throws Exception {
         try {
             String sql = "";
             debuglog.debug("Creating SQL Statement ");
@@ -191,7 +192,7 @@ public class UserDaoImpl implements UserDao {
                 Set<String> NGramsTokenLastName = selectNGrams(KeyworkArr[1]);
                 String fristNamecondtionTemplate = " user_first_name like '%$fristname$%'  ";
                 String LastnamecondtionTemplate = "  user_last_name like '%$lastname$%' ";
-                sql = "select u.*,(select count(follower_id) from user_relation where follower_id = u.user_id and following_id =" + userId + " ) as isfollowing from user u";
+                sql = "select u.*,(select count(follower_id) from user_relation where follower_id = " + userId + " and following_id =u.user_id ) as isfollowing from user u";
                 String tempString = "";
                 int i = 0;
                 for (String str : NGramsTokenFristName) {
@@ -222,6 +223,11 @@ public class UserDaoImpl implements UserDao {
             if (activity > 0) {
                 debuglog.debug("Adding activity condtion ");
                 sql += " and  user_prefered_activity = " + activity;
+            }
+            
+            if (userType ==Defines.userTypeTrainer) {
+                debuglog.debug("Adding activity condtion ");
+                sql += " and  user_type = " + userType;
             }
 
             debuglog.debug("SQL Statment :  " + sql);
@@ -311,4 +317,45 @@ public class UserDaoImpl implements UserDao {
 
     }
 
+   @Override
+    public User GetUserProfile (int UserID ) throws Exception {
+        try {
+            String sql = "SELECT * FROM user inner join prefered_activity on user.user_prefered_activity= prefered_activity.prefered_activity_id  inner join  prefered_place on  prefered_place.idprefered_place_id = user.user_prefered_place where user_id ="+UserID;
+            debuglog.debug("Select user form data base ");
+            debuglog.debug("SQL : " + sql);
+            return jdbcTemplate.query(sql, new ResultSetExtractor<User>() {
+                @Override
+                public User extractData(ResultSet rs) throws SQLException,
+                        DataAccessException {
+                    debuglog.debug("Extract data ");
+                    if (rs.next()) {
+                        User u = new User();
+                        u.setUserId(rs.getInt("user_id"));
+                        // u.setUserName(rs.getString("user_name"));
+                        u.setMobile(rs.getString("user_mobile"));
+                        u.setEmail(rs.getString("user_email"));
+                        u.setFirstName(rs.getString("user_first_name"));
+                        u.setLastName(rs.getString("user_last_name"));
+                        u.setBirthDate(rs.getDate("user_birth_date"));
+                        u.setGender(rs.getInt("user_gender"));
+                        u.setWeight(rs.getInt("user_weight"));
+                        u.setHeight(rs.getInt("user_tall"));
+                        u.setPreferedActivity(rs.getInt("user_prefered_activity"));
+                        u.setPreferedPlace(rs.getInt("user_prefered_place"));
+                        u.setType(rs.getInt("user_type"));
+                        u.setPreferedActivityDesc(rs.getString("prefered_activity_name"));
+                        u.setPreferedPlaceDesc(rs.getString("prefered_Place_name"));
+                        debuglog.debug("selected user " + u.toString());
+                        return u;
+                    }
+                    debuglog.debug("No user found");
+                    return new User();
+                }
+            });
+        } catch (Exception ex) {
+            debuglog.error("error while excutin sql >>  Error :" + ex.getMessage(), ex);
+            throw ex;
+        }
+        // return new User();
+    }
 }

@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.appvision.gym.services.LoadDataService;
+import java.util.ArrayList;
+import java.util.List;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @RestController
@@ -69,6 +71,5 @@ public class LoadDataController {
             return "STATUS:-3";
         }
     } 
-    
-      
-};
+   
+}
